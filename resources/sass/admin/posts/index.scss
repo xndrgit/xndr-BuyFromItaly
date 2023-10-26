@@ -1,0 +1,7 @@
+.badge-pill {
+    background-color: rgb(116, 125, 20);
+    width: 80px; /* Set a fixed width of 80px */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Display "..." when text overflows */
+}
