@@ -14,6 +14,7 @@ class UsersTableSeeder extends Seeder
     {
 
         $myUser = new \App\User();
+        $myUser->admin = true;
         $myUser->name = 'xndr';
         $myUser->email = 'mymails.xander@gmail.com';
         $myUser->password = \Illuminate\Support\Facades\Hash::make('0');
@@ -23,6 +24,7 @@ class UsersTableSeeder extends Seeder
         for ($i = 0; $i < $numberOfUsers; $i++) {
 
             $newUser = new \App\User();
+            $newUser->admin = false;
             $newUser->name = $faker->name;
             $newUser->email = $faker->unique()->safeEmail;
             $newUser->password = bcrypt('password');

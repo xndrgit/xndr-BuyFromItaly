@@ -1,5 +1,15 @@
 const mix = require('laravel-mix');
 
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "resources/js/"),
+            "~": path.resolve(__dirname, "public/"),
+        },
+    },
+});
+
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,5 +22,5 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .options({processCssUrls: false});
+    .js('resources/js/front.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css');

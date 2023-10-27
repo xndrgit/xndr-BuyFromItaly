@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('guest.welcome');
 });
 
@@ -30,6 +30,8 @@ Route::middleware('auth')
     // All the routes
     ->group(function() {
 
+        Route::get('dashboard', 'AdminController@dashboard')->name('dashboard')->where('admin', true); // This route is only accessible to admin users
+
         Route::get('home', 'HomeController@index')->name('home');
         Route::resource('users', 'UserController');
         Route::resource('posts', 'PostController');
@@ -42,3 +44,8 @@ Route::middleware('auth')
 
 
     });
+
+
+Route::get("{any?}", function () {
+    return view("guest.home");
+})->where("any", ".*");

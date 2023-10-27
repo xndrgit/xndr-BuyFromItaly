@@ -32,21 +32,26 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
+
                 <ul class="navbar-nav mr-auto">
                     @guest
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.users.index') }}">Users</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
-                        </li>
+
+                        @if(Auth::user()->admin) <!-- Check if the user is an admin -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.users.index') }}">Users</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.categories.index') }}">Categories</a>
+                            </li>
+                        @else
+
+                        @endif
 
                     @endguest
-
                 </ul>
 
                 <!-- Right Side Of Navbar -->
