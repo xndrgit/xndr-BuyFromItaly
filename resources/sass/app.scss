@@ -5,9 +5,8 @@
 @import 'variables';
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-
-
+// Fontawesome
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 //BACK OFFICE
 @import 'admin/posts/index';

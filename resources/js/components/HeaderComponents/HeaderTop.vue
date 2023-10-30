@@ -23,7 +23,8 @@
                 </section>
 
 
-                    <div class="divLogo col-4 d-flex flex-column justify-content-center align-items-center">
+
+                        <router-link to="/" class="divLogo col-4 d-flex flex-column justify-content-center align-items-center">
                             <transition name="fade" mode="out-in">
                                 <img
                                     v-if="showLogo"
@@ -31,9 +32,16 @@
                                     class="img-fluid logo"
                                     :src="getImg('logo.png')"
                                 />
-                                <h1 v-if="!showLogo" class="title">BUY FROM ITALY</h1>
+
+                                <h1 v-if="!showLogo" class="title">
+                                    Tunis,<br>
+                                    Sans<br>
+                                    Frontières.
+                                </h1>
                             </transition>
-                    </div>
+                        </router-link>
+
+
 
 
 
@@ -106,25 +114,31 @@ export default {
 }
 
 .HeaderTop {
-    //position: fixed;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    min-height: 120px;
-    background-color: #f1efe9;
 
-    padding: 0.5rem;
+    height: 100px;
+
+    padding: 5rem 0;
+
+    background: linear-gradient(rgba(241, 239, 233, 1) 80%, rgba(241, 239, 233, 0) 100%); /* Start transparency at the bottom */
+
 
     section {
         transition: 1s;
 
         img {
-            height: 25px;
+            height: 40px;
             padding: 0 10px;
             margin: 0.5rem 0;
         }
 
         p {
             margin: 0;
-            font-size: 0.6rem;
+            font-size: 0.8rem;
         }
 
         a {
@@ -134,13 +148,13 @@ export default {
     }
 
     .divLogo{
+        text-decoration-line: none;
         .logo{
-            height: 100px;
+            height: 120px;
             cursor: pointer;
         }
         .title{
             font-size: 1.5rem;
-            font-weight: bold;
             cursor: pointer;
             color: black;
         }

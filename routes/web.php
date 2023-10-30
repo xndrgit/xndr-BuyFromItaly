@@ -30,7 +30,6 @@ Route::middleware('auth')
     // All the routes
     ->group(function() {
 
-        Route::get('dashboard', 'AdminController@dashboard')->name('dashboard')->where('admin', true); // This route is only accessible to admin users
 
         Route::get('home', 'HomeController@index')->name('home');
         Route::resource('users', 'UserController');

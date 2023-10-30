@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('cover'); //'cover' column for image URL
+            $table->string('cover')->default('no_image.jpg');; //'cover' column for image URL
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 10, 2); // 10 digits in total with 2 decimal places

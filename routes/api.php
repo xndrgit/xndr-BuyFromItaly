@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('Api')->group(function () {
+    Route::get('posts', 'PostController@index');
+    Route::get('posts/{id}', 'PostController@show');
+
+    Route::get('categories', 'CategoryController@index');
+    Route::get('categories/{id}', 'CategoryController@show');
+    // Add more routes for creating, updating, and deleting posts as needed
+});

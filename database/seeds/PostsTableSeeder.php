@@ -17,7 +17,6 @@ class PostsTableSeeder extends Seeder
         for ($i = 0; $i < $numberOfPosts; $i++) {
 
             $newProduct = new \App\Models\Post();
-            $newProduct->cover = $faker->imageUrl(640, 480, 'animals', true);
             $newProduct->name = $faker->text(30);
             $newProduct->description = $faker->paragraph;
             $newProduct->price = $faker->randomFloat(2, 10, 1000);
