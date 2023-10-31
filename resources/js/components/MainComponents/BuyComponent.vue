@@ -1,6 +1,6 @@
 <template>
 
-    <div class="contact-box">
+    <div class="contact-box col-3">
 
         <div class="cross-icon" @click="toggleBuyComponent">
             <i class="fa fas fa-times fa-bounce"></i>
@@ -51,7 +51,7 @@ export default {
     mounted() {
     },
 
-    name: "Buy",
+    name: "BuyComponent",
     components: {},
     props: {},
 
@@ -78,7 +78,7 @@ export default {
     z-index: 10;
 
     position: fixed;
-    top: 58%; /* Center vertically on the viewport */
+    top: 60%; /* Center vertically on the viewport */
     left: 50%; /* Center horizontally on the viewport */
     transform: translate(-50%, -50%); /* Center the box perfectly */
 
@@ -113,7 +113,7 @@ export default {
 .contact-details {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 .contact-item {
@@ -156,7 +156,7 @@ span {
     font-weight: normal;
 }
 
-cta-button {
+.cta-button {
     margin: 30px 0;
 }
 

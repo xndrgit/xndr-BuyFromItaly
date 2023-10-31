@@ -13,6 +13,7 @@
                              @toggleBuyComponent="toggleBuyComponent"
                     />
 
+
                     <BuyComponent v-if="buyComponent"
                                   @toggleBuyComponent="toggleBuyComponent"
                     />
