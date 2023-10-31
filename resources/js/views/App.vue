@@ -55,7 +55,7 @@ export default {
                 .then(response => {
                     if (response.data.response) {
                         // Data is available under the "results" key
-                        this.posts = response.data.results.data.data;
+                        this.posts = response.data.results.data;
                         console.log(`📦| posts: ${response.data.count}`);
                         console.log(this.posts);
                     } else {

@@ -17,6 +17,7 @@
 
 <script>
 import Product from "../components/MainComponents/Product.vue";
+
 export default {
     mounted() {
     },
@@ -32,6 +33,7 @@ export default {
 
     data() {
         return {
+            posts: [],
         };
     },
     methods: {

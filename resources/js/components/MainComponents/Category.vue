@@ -1,7 +1,9 @@
 <template>
 
     <div class="category">
-        <router-link :to="`/categories/${categoryGift.id}`" class="link_category">
+        <router-link :class="{ active: isActiveCategory(categoryGift.id) }" :to="`/categories/${categoryGift.id}`"
+                     class="link_category"
+        >
             {{ categoryGift.name }}
         </router-link>
     </div>
@@ -23,25 +25,37 @@ export default {
         };
     },
     methods: {
+        isActiveCategory(categoryId) {
+            // Check if categoryId matches the currently active category ID
+            return this.$route.params.id === categoryId;
+        }
     }
 };
 </script>
 
 <style lang="scss" scoped>
-.category{
+.category {
     margin: 1rem;
     font-size: 1rem;
-    .link_category{
+
+    .link_category {
         text-decoration: none;
         color: black;
 
         transition: 0.5s;
-        .active{
-            font-weight: bold;
-        }
-        &:hover{
+
+        &:hover {
             opacity: 0.5;
         }
     }
+
+    .router-link-active {
+        font-weight: bold;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
 }
 </style>
