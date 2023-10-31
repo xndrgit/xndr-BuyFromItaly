@@ -1,6 +1,10 @@
 <template>
 
     <div class="contact-box">
+
+        <div class="cross-icon" @click="toggleBuyComponent">
+            <i class="fa fas fa-times fa-bounce"></i>
+        </div>
         <div class="contact-details">
             <img
                 :src="getImg('logo.png')"
@@ -53,11 +57,16 @@ export default {
 
 
     data() {
-        return {};
+        return {
+            cross: true,
+        };
     },
     methods: {
         getImg(name) {
             return `/img/${name}`;
+        },
+        toggleBuyComponent() {
+            this.$emit('toggleBuyComponent', false); // Toggle the cross variable
         },
     },
 };
@@ -66,6 +75,8 @@ export default {
 <style lang="scss" scoped>
 
 .contact-box {
+    z-index: 10;
+
     position: fixed;
     top: 58%; /* Center vertically on the viewport */
     left: 50%; /* Center horizontally on the viewport */
@@ -82,6 +93,21 @@ export default {
     text-align: center;
 
     border: 2px solid black;
+
+    .fa {
+        cursor: pointer;
+        font-size: 1rem;
+        border: 1px solid red;
+        border-radius: 50%;
+        padding: 0.5rem 0.6rem;
+
+        color: red;
+
+        &:hover {
+            background-color: red;
+            color: white;
+        }
+    }
 }
 
 .contact-details {

@@ -4,11 +4,17 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <Product v-for="post in postsGift" :key="post.id" @click="showBuyChange"
+                    <Product v-for="post in postsGift" :key="post.id"
                              :postGift="post"
+                             @toggleBuyComponent="toggleBuyComponent"
                     />
 
-                    <BuyComponent v-if="showBuy"/>
+                    <BuyComponent v-if="buyComponent"
+                                  @toggleBuyComponent="toggleBuyComponent"
+                    />
+                    <div v-if="buyComponent" class="overlay-black">
+                        <div class="content"></div>
+                    </div>
 
                 </div>
 
@@ -38,23 +44,35 @@ export default {
     data() {
         return {
             posts: [],
-            showBuy: false,
+            buyComponent: false,
         };
     },
     methods: {
         getImg(name) {
             return `/img/${name}`;
         },
-        showBuyChange() {
-
-            console.log('this.showBuy');
-            // this.showBuy = !this.showBuy;
+        toggleBuyComponent(bro) {
+            this.buyComponent = bro;
         },
+
     },
 };
 </script>
 
 <style lang="scss" scoped>
+
+.overlay-black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: 9; /* Adjust the z-index as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .contact-box {
     background-color: #f7f7f7;

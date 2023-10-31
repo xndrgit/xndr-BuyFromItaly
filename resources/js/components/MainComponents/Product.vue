@@ -1,6 +1,6 @@
 <template>
 
-    <div class="product col-3">
+    <div class="product col-3" @click="toggleBuyComponent">
 
         <div
             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
@@ -84,6 +84,9 @@ export default {
                 return `/img/no_image.png`;
             }
             return `/storage/${name}`;
+        },
+        toggleBuyComponent() {
+            this.$emit('toggleBuyComponent', true);
         },
     }
 };
