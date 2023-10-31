@@ -1,11 +1,27 @@
 <template>
 
     <div class="product col-3">
+
         <div
-             class="productTop d-flex justify-content-center align-items-center"
-             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }">
+            :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
+            class="productTop d-flex justify-content-center align-items-center"
+        >
+            <div class="overlay">
+                <div class="overlay-text">
+                    V I E W
+                </div>
+                <div class="overlay-link">
+                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
         </div>
 
+
+        <!--        <div v-if="postGift.cover"-->
+        <!--             class="productTop d-flex justify-content-center align-items-center"-->
+        <!--             style="background-image: url('/img/no_image.png')"-->
+        <!--        >-->
+        <!--        </div>-->
 
 
         <div class="productBottom">
@@ -64,18 +80,10 @@ export default {
     },
     methods: {
         getImg(name) {
-            return `storage/${name}`;
-        },
-
-        isImgValid(url){
-
-            // Check if the URL includes "no_image" and return false if found
-            if (url.includes('no_image')) {
-                return false;
+            if (name.includes('no_image')) {
+                return `/img/no_image.png`;
             }
-
-            const pattern = /^storage\/.+\.jpg|\.png|\.gif$/;
-            return pattern.test(url);
+            return `/storage/${name}`;
         },
     }
 };
@@ -85,14 +93,80 @@ export default {
 .product{
     margin: 2rem;
 
-    .productTop{
+    .productTop {
+        position: relative;
+
         height: 200px;
         //background-color: red;
 
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+
+        cursor: pointer;
+
+        .overlay {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            transition: 1s;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.7); /* Darken the background on hover */
+            }
+
+            &:hover .overlay-text {
+                opacity: 1;
+            }
+
+            &:hover .overlay-link {
+                opacity: 1;
+            }
+
+            i {
+                color: white; /* Color of the 'i' icon */
+            }
+
+            .overlay-text {
+                opacity: 0;
+
+                color: white;
+                font-size: 20px; /* Customize the font size */
+
+                &:hover {
+                    color: #f1efe9;
+                }
+
+            }
+
+            .overlay-link {
+                opacity: 0;
+
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 25px; /* Customize the font size */
+                cursor: pointer;
+
+                transition: 1s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
+
+
     .productBottom{
         //background-color: red;
         height: 60px;
