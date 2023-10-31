@@ -13,7 +13,8 @@
             <div class="d-flex">
                 <h2 class="title-product mr-2">{{postGift.name}}</h2>
                 <div class="d-flex mr-2">
-                    <h3 :style="{ color: postGift.category.color }" class="category badge rounded-pill">{{postGift.category.name}}</h3>
+                    <h3 v-if="postGift.category" :style="{ color: postGift.category.color }"
+                        class="category badge rounded-pill">{{ postGift.category.name }}</h3>
                 </div>
             </div>
 

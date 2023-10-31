@@ -65,6 +65,14 @@
 
 <script>
 export default {
+    mounted() {
+        this.getImg();
+
+        setInterval(() => {
+            this.toggleElements();
+        }, 5000);
+    },
+
     data() {
         return {
             showLogo: true,
@@ -72,11 +80,7 @@ export default {
             nextDay: new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000), // set to the day after tomorrow
         };
     },
-    mounted() {
-        setInterval(() => {
-            this.toggleElements();
-        }, 5000);
-    },
+
     filters: {
         formatDate(date) {
             const options = {
@@ -94,7 +98,7 @@ export default {
 
     methods: {
         getImg(name) {
-            return `img/${name}`;
+            return `/img/${name}`;
         },
 
         toggleElements() {
