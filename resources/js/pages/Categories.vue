@@ -17,6 +17,8 @@
 
                 </div>
             </div>
+
+
         </div>
     </div>
 </template>
@@ -26,6 +28,7 @@ import axios from "axios";
 
 import Product from "../components/MainComponents/Product.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
+import DonationComponent from "../components/MainComponents/DonationComponent.vue";
 
 export default {
     mounted() {
@@ -40,6 +43,7 @@ export default {
 
     name: "CategoryPage",
     components: {
+        DonationComponent,
         BuyComponent,
         Product
     },

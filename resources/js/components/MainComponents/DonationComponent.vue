@@ -39,7 +39,7 @@ export default {
 .donation-banner {
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, rgba(0, 122, 61, 1), rgba(0, 122, 61, 0.5)); /* Green gradient */
+    background: linear-gradient(90deg, rgba(241, 239, 233, 0) 30%, rgba(0, 122, 61, 0.62) 100%); /* Green gradient */
     color: #fff; /* White text */
     padding: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */

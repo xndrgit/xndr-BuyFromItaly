@@ -2,7 +2,7 @@
     <div class="HeaderTop d-flex align-items-center top-navbar">
         <div class="container-fluid">
             <div class="row justify-content-between align-items-center">
-                <section class="col-4 col-lg-3 d-none d-lg-block">
+                <section class="col-5 col-lg-5 d-none d-lg-block">
                     <div id="free" class="d-flex align-items-center justify-content-start">
                         <div>
                             <img
@@ -15,7 +15,7 @@
                             <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>
                             <p>
                                 <strong>
-                                    EXPÉDITION GRATUITE DANS TOUTE L'ITALIE
+                                    EXPÉDITION GRATUITE DANS TOUTE LE TOUNISIE
                                 </strong>
                             </p>
                         </div>
@@ -23,32 +23,28 @@
                 </section>
 
 
+                <router-link class="divLogo col-2 d-flex flex-column justify-content-center align-items-center" to="/">
+                    <transition mode="out-in" name="fade">
+                        <img key="logo" :src="getImg('logo.png')" alt="logo" class="img-fluid logo"/>
+                    </transition>
+                    <!--                    <transition v-if="!showLogo" name="fade" mode="out-in">-->
+                    <!--                        <div class="div-tsf">-->
+                    <!--                            <img alt="logo" class="img-fluid logo-tsf" :src="getImg('tsf.png')" key="tsf" />-->
+                    <!--                        </div>-->
+                    <!--                    </transition>-->
+                </router-link>
 
-                        <router-link to="/" class="divLogo col-4 d-flex flex-column justify-content-center align-items-center">
-                            <transition name="fade" mode="out-in">
-                                <img
-                                    v-if="showLogo"
-                                    alt="logo"
-                                    class="img-fluid logo"
-                                    :src="getImg('logo.png')"
-                                />
-
-                                <h1 v-if="!showLogo" class="title">
-                                    Tunis,<br>
-                                    Sans<br>
-                                    Frontières.
-                                </h1>
-                            </transition>
-                        </router-link>
-
+                <!--                                <h1 v-if="!showLogo" class="title">-->
+                <!--                                    Tunis,<br>-->
+                <!--                                    Sans<br>-->
+                <!--                                    Frontières.-->
+                <!--                                </h1>-->
 
 
-
-
-                <section class="col-4 col-lg-3 d-none d-lg-block">
+                <section class="col-5 col-lg-5 d-none d-lg-block">
                     <div id="clock" class="d-flex align-items-center justify-content-end">
                         <div>
-                            <img class="img-fluid" alt="logo_time" :src="getImg('logo_time.gif')" />
+                            <img :src="getImg('logo_time.png')" alt="logo_time" class="img-fluid p-1"/>
                         </div>
                         <div class="d-none d-lg-inline">
                             <p>RÉSERVEZ! AVANT QUE LA COMMANDE NE COMMENCE</p>
@@ -110,12 +106,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to {
-    opacity: 0;
-}
+
 
 .HeaderTop {
     z-index: 10;
@@ -128,16 +119,15 @@ export default {
 
     padding: 5rem 0;
 
-    background: linear-gradient(rgba(241, 239, 233, 1) 80%, rgba(241, 239, 233, 0) 100%); /* Start transparency at the bottom */
+    background: linear-gradient(rgba(241, 239, 233, 1) 85%, rgba(241, 239, 233, 0) 100%); /* Start transparency at the bottom */
 
 
     section {
         transition: 1s;
 
         img {
-            height: 40px;
-            padding: 0 10px;
-            margin: 0.5rem 0;
+            height: 30px;
+            margin: 0.5rem;
         }
 
         p {
@@ -151,13 +141,53 @@ export default {
         }
     }
 
-    .divLogo{
+
+    .divLogo {
         text-decoration-line: none;
-        .logo{
+
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.5s;
+        }
+
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+
+        .logo {
             height: 120px;
             cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+                opacity: 0.8;
+
+            }
         }
-        .title{
+
+        .div-tsf {
+            height: 100px;
+            width: 100px;
+
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s, border 0.3s; /* Add transitions for smooth hover effects */
+        }
+
+        .div-tsf:hover {
+            background-color: white; /* Darken the background on hover */
+            transform: scale(1.05); /* Slightly scale up on hover for a zoom effect */
+        }
+
+        .logo-tsf {
+            max-height: 140%;
+            max-width: 140%;
+            border-radius: 50%;
+        }
+
+        .title {
             font-size: 1.5rem;
             cursor: pointer;
             color: black;

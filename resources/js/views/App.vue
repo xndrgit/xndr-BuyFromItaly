@@ -10,9 +10,10 @@
 
 
         <router-view
-            :postsGift="posts"
         >
+<!--            :postsGift="posts"-->
         </router-view>
+        <DonationComponent/>
 
 
 <!--        <p>-->
@@ -30,15 +31,16 @@ import axios from 'axios';
 
 import HeaderTop from "../components/HeaderComponents/HeaderTop.vue";
 import Category from "../components/MainComponents/Category.vue";
+import DonationComponent from "../components/MainComponents/DonationComponent.vue";
 
 export default {
     mounted() {
         this.getCategories();
-        this.getPosts();
     },
 
     name: "App",
     components: {
+        DonationComponent,
         HeaderTop,
         Category,
     },
@@ -49,25 +51,25 @@ export default {
         };
     },
     methods: {
-        getPosts() {
-            // Make an HTTP GET request to fetch all posts with their categories
-            axios.get(`/api/posts`)
-                .then(response => {
-                    if (response.data.response) {
-                        // Data is available under the "results" key
-                        this.posts = response.data.results.data;
-                        console.log(`📦| posts: ${response.data.count}`);
-                        console.log(this.posts);
-                    } else {
-                        // Handle the case where the response indicates an error
-                        console.error('Error fetching data.');
-                    }
-                })
-                .catch(error => {
-                    // Handle any network or other errors
-                    console.error('An error occurred:', error);
-                });
-        },
+        // getPosts() {
+        //     // Make an HTTP GET request to fetch all posts with their categories
+        //     axios.get(`/api/posts`)
+        //         .then(response => {
+        //             if (response.data.response) {
+        //                 // Data is available under the "results" key
+        //                 this.posts = response.data.results.data;
+        //                 console.log(`📦| posts: ${response.data.count}`);
+        //                 console.log(this.posts);
+        //             } else {
+        //                 // Handle the case where the response indicates an error
+        //                 console.error('Error fetching data.');
+        //             }
+        //         })
+        //         .catch(error => {
+        //             // Handle any network or other errors
+        //             console.error('An error occurred:', error);
+        //         });
+        // },
 
         getCategories() {
             // Make an HTTP GET request to fetch all posts with their categories
@@ -96,12 +98,14 @@ export default {
 
 <style lang="scss">
 body {
+    user-select: none;
+
     background-color: #f1efe9;
     //background-color: red;
 
     font-family: 'Lilita One', sans-serif;
 
-    .categories{
+    .categories {
         margin-top: 180px;
     }
 }
