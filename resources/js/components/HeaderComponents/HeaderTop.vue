@@ -1,7 +1,7 @@
 <template>
     <div class="HeaderTop d-flex align-items-center top-navbar">
         <div class="container-fluid">
-            <div class="row justify-content-between align-items-center">
+            <div class="row justify-content-lg-between justify-content-center align-items-center">
                 <section class="col-5 col-lg-5 d-none d-lg-block">
                     <div id="free" class="d-flex align-items-center justify-content-start">
                         <div>
@@ -25,7 +25,7 @@
 
                 <router-link class="divLogo col-2 d-flex flex-column justify-content-center align-items-center" to="/">
                     <transition mode="out-in" name="fade">
-                        <img key="logo" :src="getImg('logo.png')" alt="logo" class="img-fluid logo"/>
+                        <img key="logo" :src="getImg('logo.png')" alt="logo" class="logo"/>
                     </transition>
                     <!--                    <transition v-if="!showLogo" name="fade" mode="out-in">-->
                     <!--                        <div class="div-tsf">-->
@@ -105,8 +105,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 
 .HeaderTop {
     z-index: 10;
@@ -196,8 +194,13 @@ export default {
 
 }
 
+@media (max-width: 768px) {
 
-
-@media (max-width: 576px) {
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* CSS for tablets */
+}
+
+
 </style>
