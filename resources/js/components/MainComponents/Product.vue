@@ -1,19 +1,22 @@
 <template>
 
-    <div class="product col-3" @click="toggleBuyComponent">
+    <div class="product col-2">
 
         <div
             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
             class="productTop d-flex justify-content-center align-items-center"
         >
-            <div class="overlay">
-                <div class="overlay-text">
-                    V I E W
+            <a :href="postGift.shop_link">
+                <div class="overlay">
+                    <div class="overlay-text">
+                        S E A R C H
+                    </div>
+                    <!--                <div class="overlay-link">-->
+                    <!--                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>-->
+                    <!--                </div>-->
                 </div>
-                <div class="overlay-link">
-                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>
-                </div>
-            </div>
+            </a>
+
         </div>
 
 
@@ -38,22 +41,21 @@
             <div class="info-product d-flex align-items-center ">
                 <div v-if="!postGift.promo_price" class="d-flex mr-2">
                     <i class="fa fa-solid fa-tag"></i>
-                    <h3 class="price">{{postGift.price}}</h3>
+                    <h3 class="price">{{ postGift.price }} TND</h3>
                 </div>
                 <div v-if="postGift.promo_price" class="d-flex mr-2">
                     <i class="fa fa-solid fa-tag"></i>
-                    <h3 class="price" style="text-decoration: line-through;">{{postGift.price}}</h3>
+                    <h3 class="price" style="text-decoration: line-through;">{{ postGift.price }}</h3>
                 </div>
                 <div v-if="postGift.promo_price" class="d-flex mr-2">
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
-                    <h3 class="promo_price">{{postGift.promo_price}}</h3>
+                    <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <div v-if="postGift.promo_price" class="d-flex mr-2">
-                    <a :href="postGift.shop_link" class="d-flex">
-                        <i class="fa fa-solid fa-globe "></i>
-                        <h3 class="shop">search on internet</h3>
+                <div class="d-flex mr-2" @click="toggleBuyComponent">
+                    <a class="d-flex divBuy fa-bounce">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h3 class="buy">buy</h3>
                     </a>
-
                 </div>
 
             </div>
@@ -182,19 +184,27 @@ export default {
             font-size: 0.8rem;
         }
         .info-product{
-            .fa{
+            .fa {
                 margin-right: 2px;
             }
-            .price{
+
+            .price {
                 font-size: 0.8rem;
             }
-            .promo_price{
+
+            .promo_price {
                 font-size: 0.8rem;
                 color: red;
             }
-            .shop{
-                font-size: 0.8rem;
+
+            .divBuy {
+                cursor: pointer;
+
+                .buy {
+                    font-size: 0.8rem;
+                }
             }
+
 
         }
     }

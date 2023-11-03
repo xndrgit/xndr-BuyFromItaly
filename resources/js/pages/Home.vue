@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <DonationComponent/>
+<!--                <DonationComponent/>-->
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
@@ -82,14 +82,19 @@ export default {
                 .then(response => {
                     if (response.data.response) {
                         // Data is available under the "results" key
-                        this.posts = response.data.results.data;
+                        this.posts = response.data.results.data; // Assign posts to this.posts
                         console.log(`📦| posts: ${response.data.count}`);
                         console.log(this.posts);
+
+                        // Shuffle the posts array
+                        for (let i = this.posts.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [this.posts[i], this.posts[j]] = [this.posts[j], this.posts[i]];
+                        }
 
                         this.totalPages = response.data.results.last_page;
                         console.log(`📦| posts total pages: ${this.totalPages}`);
                         console.log(`📦| posts current page: ${this.currentPage}`);
-
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');
@@ -108,7 +113,7 @@ export default {
                 this.getPosts(this.currentPage);
                 // Scroll to a specific position on the page (e.g., 500 pixels from the top)
                 window.scrollTo({
-                    top: 500,
+                    top: 180,
                     behavior: 'smooth' // This creates a smooth scrolling effect
                 });
             } else {
@@ -123,7 +128,7 @@ export default {
 
                 // Scroll to a specific position on the page (e.g., 500 pixels from the top)
                 window.scrollTo({
-                    top: 500,
+                    top: 180,
                     behavior: 'smooth' // This creates a smooth scrolling effect
                 });
             } else {
