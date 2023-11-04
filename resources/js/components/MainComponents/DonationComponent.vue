@@ -1,12 +1,13 @@
 <template>
 
-    <div class="donation-banner col-12 d-flex justify-content-center">
-        <img :src="getImg('logo.png')" alt="Donation Image" class="col-4 banner-image img-fluid">
-        <div class="banner-content col-6">
+    <div class="donation-banner col-12 d-flex flex-column flex-lg-row justify-content-center">
+        <img :src="getImg('logo.png')" alt="Donation Image" class="col-md-4 col-12 banner-image img-fluid">
+        <div class="banner-content col-lg-6 col-12 ">
             <h2>PALESTINE EMERGENCY</h2>
             <p>Stand with Gaza. Donate now and make a difference, every donation counts.</p>
             <a class="donate-button"
-               href="https://islamicaid.com/current-appeals/palestine-appeal/?gclid=Cj0KCQjwy4KqBhD0ARIsAEbCt6ixhNRwX9iNJUh5i_VlWqQXLtjYM-zSbr-NrpGJi9Ejeuqd66lJL0kaAlwsEALw_wcB">Donate Now</a>
+               href="https://islamicaid.com/current-appeals/palestine-appeal/?gclid=Cj0KCQjwy4KqBhD0ARIsAEbCt6ixhNRwX9iNJUh5i_VlWqQXLtjYM-zSbr-NrpGJi9Ejeuqd66lJL0kaAlwsEALw_wcB">Donate
+                Now</a>
         </div>
     </div>
 
@@ -42,7 +43,7 @@ export default {
     background: linear-gradient(90deg, rgba(241, 239, 233, 0) 30%, rgba(0, 122, 61, 0.62) 100%); /* Green gradient */
     color: #fff; /* White text */
     padding: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 /* Banner Content */
@@ -73,7 +74,6 @@ p {
     font-size: 20px;
     transition: background-color 0.3s;
     margin-top: 15px;
-    display: inline-block;
 }
 
 .donate-button:hover {

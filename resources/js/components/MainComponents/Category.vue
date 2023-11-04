@@ -1,7 +1,8 @@
 <template>
 
     <div class="category">
-        <router-link :class="{ active: isActiveCategory(categoryGift.id) }" :to="`/categories/${categoryGift.id}`"
+
+    <router-link :class="{ active: isActiveCategory(categoryGift.id) }" :to="`/categories/${categoryGift.id}`"
                      class="link_category"
         >
             {{ categoryGift.name }}
@@ -46,14 +47,6 @@ export default {
 
         &:hover {
             opacity: 0.5;
-        }
-    }
-
-    .router-link-active {
-        font-weight: bold;
-
-        &:hover {
-            opacity: 1;
         }
     }
 

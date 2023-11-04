@@ -1,22 +1,46 @@
 <template>
     <div>
-        <HeaderTop/>
+        <HeaderTop @toggleBuyComponent="toggleBuyComponent"/>
+
 
         <div class="categories d-flex justify-content-center align-items-center">
-            <Category
-                v-for="category in categories" :key="category.id" :categoryGift="category"
+
+
+            <div class=" mobile-categories d-flex flex-column align-items-center justify-content-center d-lg-none">
+                <i v-if="!iconMenu" class="fa-beat fa-solid fa-bars icon-menu" @click="toggleIconMenu"></i>
+                <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
+                <div v-if="iconMenu" class="mobile-menu">
+                    <ul>
+                        <li v-for="category in categories" :key="category.id">
+                            <router-link :to="`/categories/${category.id}`">
+                                {{ category.name }}
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <Category v-for="category in categories"
+                      :key="category.id" :categoryGift="category" class="d-none d-lg-block"
             />
+        </div>
+
+        <div :style="circleStyle" class="button fa-bounce d-lg-none" @click="toggleBuyComponent" @mousedown="startDragging"
+             @mousemove="moveCircle" @mouseup="stopDragging">
+            <i class="fa-2 fa-solid fa-headset"></i>
         </div>
 
 
         <router-view
+            :BuyComponentGift="buyComponent"
         >
-<!--            :postsGift="posts"-->
+            <!--            :postsGift="posts"-->
         </router-view>
         <DonationComponent/>
 
 
-<!--        <p>-->
+        <!--        <p>-->
 <!--&lt;!&ndash;            <router-link to="/welcome">Go to Foo</router-link>&ndash;&gt;-->
 <!--&lt;!&ndash;            <router-link to="/contacts">Go to Bar</router-link>&ndash;&gt;-->
 <!--        </p>-->
@@ -48,6 +72,17 @@ export default {
         return {
             categories: [],
             posts: [],
+            iconMenu: false,
+            buyComponent: false,
+
+            isDragging: false,
+            offsetX: 0,
+            offsetY: 0,
+            circleStyle: {
+                position: 'fixed',
+                right: '10px', // Initial X position
+                bottom: '10px',  // Initial Y position
+            },
         };
     },
     methods: {
@@ -90,6 +125,28 @@ export default {
                     console.error('An error occurred:', error);
                 });
         },
+        toggleIconMenu() {
+            this.iconMenu = !this.iconMenu;
+        },
+        toggleBuyComponent() {
+            this.buyComponent = !this.buyComponent;
+        },
+
+        startDragging(event) {
+            this.isDragging = true;
+            const rect = event.target.getBoundingClientRect();
+            this.offsetX = event.clientX - rect.left;
+            this.offsetY = event.clientY - rect.top;
+        },
+        moveCircle(event) {
+            if (this.isDragging) {
+                this.circleStyle.left = event.clientX - this.offsetX + 'px';
+                this.circleStyle.top = event.clientY - this.offsetY + 'px';
+            }
+        },
+        stopDragging() {
+            this.isDragging = false;
+        },
     }
 
 };
@@ -97,6 +154,7 @@ export default {
 
 
 <style lang="scss">
+
 body {
     user-select: none;
 
@@ -105,8 +163,85 @@ body {
 
     font-family: 'Lilita One', sans-serif;
 
+    .router-link-active {
+        font-weight: bold;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
     .categories {
         margin-top: 180px;
+
+        i {
+            border-radius: 50%;
+            padding: 0.5rem;
+
+            cursor: pointer;
+
+            transition: 1s;
+
+            &:hover {
+
+            }
+        }
+    }
+
+    .mobile-categories {
+
+        /* CSS for the icons */
+        .icon-menu {
+            font-size: 20px; /* Adjust the size as needed */
+            cursor: pointer;
+            color: #333; /* Change the color as needed */
+        }
+
+        /* Show the menu when categoriesMenu is active */
+        .categories-menu-active .mobile-menu {
+            background-color: #fff; /* Background color for the menu */
+            position: absolute;
+            top: 40px; /* Adjust the top position as needed */
+            right: 0;
+            width: 200px; /* Adjust the width as needed */
+            border: 1px solid #ddd; /* Add a border for separation */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mobile-menu li {
+            margin: 10px 0;
+
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #333; /* Link color */
+        }
+
+    }
+
+    .button {
+        z-index: 99;
+
+        display: inline-block;
+        padding: 0.5rem 0.8rem;
+        border: 2px solid black;
+        border-radius: 50px;
+        text-align: center;
+        color: black;
+        background-color: transparent;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+
+        &:hover {
+            background-color: #ccc;
+        }
     }
 }
 </style>

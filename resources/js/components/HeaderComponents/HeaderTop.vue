@@ -41,17 +41,10 @@
                 <!--                                </h1>-->
 
 
-                <section class="col-5 col-lg-5 d-none d-lg-block">
-                    <div id="clock" class="d-flex align-items-center justify-content-end">
-                        <div>
-                            <img :src="getImg('logo_time.png')" alt="logo_time" class="img-fluid p-1"/>
-                        </div>
-                        <div class="d-none d-lg-inline">
-                            <p>RÉSERVEZ! AVANT QUE LA COMMANDE NE COMMENCE</p>
-                            <p>
-                                <strong> {{ nextDay | formatDate }} </strong>
-                            </p>
-                        </div>
+                <section class="col-5 col-lg-5 d-none d-lg-flex justify-content-center fa-bounce">
+                    <div class="button" @click="toggleBuyComponent">
+                        <i class="fa-2 fa-solid fa-headset"></i>
+                        Contact
                     </div>
                 </section>
             </div>
@@ -100,6 +93,10 @@ export default {
         toggleElements() {
             this.showLogo = !this.showLogo;
         },
+
+        toggleBuyComponent() {
+            this.$emit('toggleBuyComponent', true);
+        },
     },
 };
 </script>
@@ -137,6 +134,8 @@ export default {
             text-decoration: none;
             color: white;
         }
+
+
     }
 
 
@@ -197,7 +196,6 @@ export default {
 @media (max-width: 768px) {
 
 }
-
 @media (min-width: 769px) and (max-width: 1024px) {
     /* CSS for tablets */
 }

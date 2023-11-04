@@ -1,6 +1,6 @@
 <template>
 
-    <div class="product col-2">
+    <div class="product col-12 col-md-3 col-lg-2">
 
         <div
             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
@@ -51,13 +51,12 @@
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
                     <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <div class="d-flex mr-2" @click="toggleBuyComponent">
-                    <a class="d-flex divBuy fa-bounce">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <h3 class="buy">buy</h3>
-                    </a>
-                </div>
-
+                <!--                <div class="d-flex" @click="toggleBuyComponent">-->
+                <!--                    <a class="d-flex divBuy">-->
+                <!--                        <i class="fa-solid fa-cart-shopping"></i>-->
+                <!--                        &lt;!&ndash;                    <h3 class="buy">buy</h3>&ndash;&gt;-->
+                <!--                    </a>-->
+                <!--                </div>-->
             </div>
 
 
@@ -176,8 +175,8 @@ export default {
         //background-color: red;
         height: 60px;
         padding-top: 10px;
-        .title-product{
-            font-size: 1rem;
+        .title-product {
+            font-size: 0.8rem;
             font-weight: bold;
         }
         .category{
@@ -189,24 +188,165 @@ export default {
             }
 
             .price {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
             }
 
             .promo_price {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 color: red;
             }
 
             .divBuy {
                 cursor: pointer;
 
-                .buy {
-                    font-size: 0.8rem;
+                i {
+                    font-size: 0.7rem;
+
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    padding: 0.3rem;
+
+                    color: black;
                 }
+
+                .buy {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+
+
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        margin: 2rem 0;
+
+        .productTop {
+            position: relative;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            .overlay {
+                position: absolute;
+
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                transition: 1s;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.7); /* Darken the background on hover */
+                }
+
+                &:hover .overlay-text {
+                    opacity: 1;
+                }
+
+                &:hover .overlay-link {
+                    opacity: 1;
+                }
+
+                i {
+                    color: white; /* Color of the 'i' icon */
+                }
+
+                .overlay-text {
+                    opacity: 0;
+
+                    color: white;
+                    font-size: 25px; /* Customize the font size */
+
+                    &:hover {
+                        color: #f1efe9;
+                    }
+
+                }
+
+                .overlay-link {
+                    opacity: 0;
+
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 25px; /* Customize the font size */
+                    cursor: pointer;
+
+                    transition: 1s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+
+        .productBottom {
+            //background-color: red;
+            height: 60px;
+            padding-top: 10px;
+
+            .title-product {
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            .category {
+                font-size: 0.7rem;
+            }
+
+            .info-product {
+                .fa {
+                    margin-right: 2px;
+                }
+
+                .price {
+                    font-size: 0.6rem;
+                }
+
+                .promo_price {
+                    font-size: 0.6rem;
+                    color: red;
+                }
+
+                .divBuy {
+                    cursor: pointer;
+
+                    i {
+                        font-size: 0.7rem;
+
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        padding: 0.3rem;
+
+                        color: black;
+                    }
+
+                    .buy {
+                        font-size: 0.5rem;
+                    }
+                }
+
             }
 
 
         }
     }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* CSS for tablets */
 }
 </style>
