@@ -1,49 +1,48 @@
 <template>
     <div>
-        <HeaderTop @toggleBuyComponent="toggleBuyComponent"/>
+
+        <Loading v-if="loading"/>
+
+        <div v-if="!loading">
+            <HeaderTop @toggleBuyComponent="toggleBuyComponent"/>
 
 
-        <div class="categories d-flex justify-content-center align-items-center">
+            <div class="categories d-flex justify-content-center align-items-center">
 
 
-            <div class=" mobile-categories d-flex flex-column align-items-center justify-content-center d-lg-none">
-                <i v-if="!iconMenu" class="fa-beat fa-solid fa-bars icon-menu" @click="toggleIconMenu"></i>
-                <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
-                <div v-if="iconMenu" class="mobile-menu">
-                    <ul>
-                        <li v-for="category in categories" :key="category.id">
-                            <router-link :to="`/categories/${category.id}`">
-                                {{ category.name }}
-                            </router-link>
-                        </li>
-                    </ul>
+                <div class=" mobile-categories d-flex flex-column align-items-center justify-content-center d-lg-none">
+                    <i v-if="!iconMenu" class="fa-beat fa-solid fa-bars icon-menu" @click="toggleIconMenu"></i>
+                    <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
+                    <div v-if="iconMenu" class="mobile-menu">
+                        <ul>
+                            <li v-for="category in categories" :key="category.id">
+                                <router-link :to="`/categories/${category.id}`" class="link_category">
+                                    {{ category.name }}
+                                </router-link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <Category v-for="category in categories"
+                          :key="category.id" :categoryGift="category" class="d-none d-lg-block "
+                />
+            </div>
+
+            <div :style="circleStyle" class="button fa-bounce d-lg-none" @click="toggleBuyComponent"
+                 @mousedown="startDragging"
+                 @mousemove="moveCircle" @mouseup="stopDragging">
+                <i class="fa-2 fa-solid fa-headset"></i>
             </div>
 
 
-            <Category v-for="category in categories"
-                      :key="category.id" :categoryGift="category" class="d-none d-lg-block"
-            />
+            <router-view
+                :BuyComponentGift="buyComponent"
+            >
+                <!--            :postsGift="posts"-->
+            </router-view>
+            <DonationComponent/>
         </div>
-
-        <div :style="circleStyle" class="button fa-bounce d-lg-none" @click="toggleBuyComponent" @mousedown="startDragging"
-             @mousemove="moveCircle" @mouseup="stopDragging">
-            <i class="fa-2 fa-solid fa-headset"></i>
-        </div>
-
-
-        <router-view
-            :BuyComponentGift="buyComponent"
-        >
-            <!--            :postsGift="posts"-->
-        </router-view>
-        <DonationComponent/>
-
-
-        <!--        <p>-->
-<!--&lt;!&ndash;            <router-link to="/welcome">Go to Foo</router-link>&ndash;&gt;-->
-<!--&lt;!&ndash;            <router-link to="/contacts">Go to Bar</router-link>&ndash;&gt;-->
-<!--        </p>-->
 
     </div>
 
@@ -53,23 +52,27 @@
 <script>
 import axios from 'axios';
 
+import Loading from "../components/MainComponents/Loading.vue";
 import HeaderTop from "../components/HeaderComponents/HeaderTop.vue";
 import Category from "../components/MainComponents/Category.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
 
 export default {
     mounted() {
-        this.getCategories();
+        this.loaded();
     },
 
     name: "App",
     components: {
+        Loading,
         DonationComponent,
         HeaderTop,
         Category,
     },
     data() {
         return {
+            loading: true,
+
             categories: [],
             posts: [],
             iconMenu: false,
@@ -86,6 +89,17 @@ export default {
         };
     },
     methods: {
+        loaded() {
+            // Set loading to true
+            this.loading = true;
+            this.getCategories();
+            // Use setTimeout to delay the code execution by 5 seconds (5000 milliseconds)
+            setTimeout(() => {
+                // After 5 seconds, call getCategories and set loading to false
+                this.loading = false;
+            }, 2000);
+        },
+
         // getPosts() {
         //     // Make an HTTP GET request to fetch all posts with their categories
         //     axios.get(`/api/posts`)
@@ -154,7 +168,6 @@ export default {
 
 
 <style lang="scss">
-
 body {
     user-select: none;
 
@@ -234,7 +247,7 @@ body {
         border-radius: 50px;
         text-align: center;
         color: black;
-        background-color: transparent;
+        background-color: white;
         cursor: pointer;
         transition: background-color 0.3s;
 
@@ -243,5 +256,32 @@ body {
             background-color: #ccc;
         }
     }
+
+    .link_category {
+        text-decoration: none;
+        color: black;
+        transition: all 0.3s ease; /* Smooth transition for all properties */
+
+        /* Add subtle hover effects */
+        &:hover {
+            transform: translateY(-3px); /* Slightly lift the element */
+            opacity: 0.8; /* Reduce opacity on hover */
+        }
+
+        /* Add an underline effect on hover */
+        &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: black;
+            transition: width 0.3s ease; /* Animate the underline width */
+        }
+
+        &:hover::after {
+            width: 100%; /* Expand the underline on hover */
+        }
+    }
+
 }
 </style>

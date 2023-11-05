@@ -1,8 +1,7 @@
 <template>
 
     <div class="category">
-
-    <router-link :class="{ active: isActiveCategory(categoryGift.id) }" :to="`/categories/${categoryGift.id}`"
+        <router-link :class="{ active: isActiveCategory(categoryGift.id) }" :to="`/categories/${categoryGift.id}`"
                      class="link_category"
         >
             {{ categoryGift.name }}
@@ -38,17 +37,9 @@ export default {
 .category {
     margin: 1rem;
     font-size: 1rem;
+    display: inline-block; /* Allow elements to be side by side */
 
-    .link_category {
-        text-decoration: none;
-        color: black;
-
-        transition: 0.5s;
-
-        &:hover {
-            opacity: 0.5;
-        }
-    }
 
 }
+
 </style>

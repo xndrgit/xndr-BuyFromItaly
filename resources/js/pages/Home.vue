@@ -53,7 +53,7 @@ export default {
             if (newVal !== oldVal) {
                 this.buyComponent = !this.buyComponent;
                 // The BuyComponentGift variable has changed, you can do something here.
-                console.log("BuyComponentGift has changed. New value: " + newVal);
+                // console.log("BuyComponentGift has changed. New value: " + newVal);
                 // You can perform any actions or logic you need when BuyComponentGift changes.
             }
         },
@@ -73,7 +73,11 @@ export default {
 
     data() {
         return {
+            loading: null,
+
             posts: [],
+            promoPosts: [],
+
             buyComponent: false,
 
             currentPage: 1,

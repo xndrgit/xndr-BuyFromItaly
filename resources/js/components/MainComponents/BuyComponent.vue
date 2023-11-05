@@ -14,13 +14,13 @@
             <div class="contact-item">
                 <i class="fab fa-whatsapp"></i>
                 <div class="contact-text">
-                    <a href="https://wa.me/+393880771396">Contact us via WhatsApp</a>
+                    <a href="https://wa.me/+393880771396">WhatsApp</a>
                 </div>
             </div>
             <div class="contact-item">
-                <i class="fab fa-instagram"></i>
+                <i class="far fa-envelope"></i>
                 <div class="contact-text">
-                    <a href="https://www.instagram.com/xndr.ig/">@xndr.ig</a>
+                    <a href="mailto:mymails.xander@gmail.com">mymails.xander@gmail.com</a>
                 </div>
             </div>
             <div class="contact-item">
@@ -30,11 +30,13 @@
                 </div>
             </div>
             <div class="contact-item">
-                <i class="far fa-envelope"></i>
+                <i class="fab fa-instagram"></i>
                 <div class="contact-text">
-                    <a href="mailto:mymails.xander@gmail.com">mymails.xander@gmail.com</a>
+                    <a href="https://www.instagram.com/xndr.ig/">@xndr.ig</a>
                 </div>
             </div>
+
+
             <!--                            <div class="cta-button">-->
             <!--                                <button class="buy-button">-->
             <!--                                    <i class="fas fa-shopping-cart"></i> Buy Now-->
@@ -113,7 +115,7 @@ export default {
 .contact-details {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .contact-item {
@@ -225,7 +227,7 @@ span {
     .contact-details {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
     }
 
     .contact-item {

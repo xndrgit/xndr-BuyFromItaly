@@ -81,4 +81,17 @@ p {
 }
 
 
+@media (max-width: 768px) {
+    /* Banner Container */
+    .donation-banner {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(241, 239, 233, 0) 40%, rgba(0, 122, 61, 0.62) 100%); /* Transparent to Green gradient (top to bottom) */
+        color: #fff; /* White text */
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    }
+}
+
+
 </style>
