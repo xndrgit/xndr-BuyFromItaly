@@ -69,25 +69,44 @@ export default {
         };
     },
     methods: {
-        getPosts() {
-            // Make an HTTP GET request to fetch all posts with their categories
-            axios.get(`/api/posts`)
-                .then(response => {
+        async getPosts() {
+            try {
+                // Initialize an array to store all promo products
+                const allPromoProducts = [];
+
+                // Make an initial request to get the first page
+                let page = 1;
+                let totalPages = 1; // Initialize to a non-zero value
+                while (page <= totalPages) {
+                    const response = await axios.get(`/api/posts?page=${page}`);
                     if (response.data.response) {
                         // Data is available under the "results" key
-                        this.posts = response.data.results.data;
-                        this.promoPosts = this.posts.filter(post => post.promo_price !== null);
+                        const pageData = response.data.results.data;
 
+                        // Filter and add promo products from this page to the array
+                        const promoProducts = pageData.filter(post => post.promo_price !== null);
+                        allPromoProducts.push(...promoProducts);
+
+                        // Update the total number of pages
+                        totalPages = response.data.results.last_page;
+
+                        // Move to the next page
+                        page++;
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');
+                        break;
                     }
-                })
-                .catch(error => {
-                    // Handle any network or other errors
-                    console.error('An error occurred:', error);
-                });
+                }
+
+                // Set the promo products to your component data
+                this.promoPosts = allPromoProducts;
+            } catch (error) {
+                // Handle any network or other errors
+                console.error('An error occurred:', error);
+            }
         },
+
         toggleBuyComponent(bro) {
             this.buyComponent = bro;
         },
