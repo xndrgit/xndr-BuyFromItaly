@@ -9,7 +9,7 @@
             <img
                 :src="getImg('logo.png')"
                 alt="logo"
-                class="img-fluid logo"
+                class="img-fluid logo "
             />
             <div class="contact-item">
                 <i class="fab fa-whatsapp"></i>
@@ -116,6 +116,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
 }
 
 .contact-item {

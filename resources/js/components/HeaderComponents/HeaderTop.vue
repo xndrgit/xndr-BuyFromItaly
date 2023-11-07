@@ -152,7 +152,7 @@ export default {
         }
 
         .logo {
-            height: 120px;
+            height: 150px;
             cursor: pointer;
             transition: 0.2s;
 
