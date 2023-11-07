@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Home from './pages/Home.vue';
 import Contacts from './pages/Contacts.vue';
 import Categories from "./pages/Categories.vue";
+import Promo from "./pages/Promo.vue";
 
 // per ogni pagina avrò: path (uri) name (by name class), component
 const router = new VueRouter({
@@ -19,6 +20,11 @@ const router = new VueRouter({
             path: '/categories/:id',
             name: 'categories',
             component: Categories
+        },
+        {
+            path: '/promo',
+            name: 'promo',
+            component: Promo
         },
         {
             path: '/contacts',

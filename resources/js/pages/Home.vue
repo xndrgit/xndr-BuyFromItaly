@@ -3,17 +3,24 @@
         <div class="container-fluid">
             <div class="row">
 
-<!--                <DonationComponent/>-->
+                <!--                <DonationComponent/>-->
+
+
+                <!--                <div class="col-12 d-flex overflow-auto justify-content-center product-list">-->
+                <!--                    <PromoProduct v-for="post in promoPosts" :key="post.id"-->
+                <!--                                  :postGift="post"-->
+                <!--                                  @toggleBuyComponent="toggleBuyComponent"-->
+                <!--                    />-->
+                <!--                </div>-->
+
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-
-                    <Product v-for="post in posts" :key="post.id"
+                    <Product v-for="post in posts" v-show="!promoPostsBoolean" :key="post.id"
                              :postGift="post"
-                             @toggleBuyComponent="toggleBuyComponent"
                     />
 
-                    <BuyComponent v-if="buyComponent"
+                    <BuyComponent v-show="buyComponent"
                                   @toggleBuyComponent="toggleBuyComponent"
                     />
                     <div v-if="buyComponent" class="overlay-black">
@@ -40,6 +47,7 @@
 
 <script>
 import Product from "../components/MainComponents/Product.vue";
+import PromoProduct from "./Promo.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
 import axios from "axios";
@@ -62,12 +70,14 @@ export default {
     name: "Home",
     components: {
         Product,
+        PromoProduct,
         BuyComponent,
         DonationComponent,
 
     },
     props: {
         BuyComponentGift: Boolean,
+        PromoPostGift: Boolean,
     },
 
 
@@ -77,7 +87,7 @@ export default {
 
             posts: [],
             promoPosts: [],
-
+            promoPostsBoolean: false,
             buyComponent: false,
 
             currentPage: 1,
@@ -101,6 +111,9 @@ export default {
                         this.posts = response.data.results.data; // Assign posts to this.posts
                         console.log(`📦| posts: ${response.data.count}`);
                         console.log(this.posts);
+
+                        // Filter posts with promo_price
+                        this.promoPosts = this.posts.filter(post => post.promo_price !== null);
 
                         // Shuffle the posts array
                         for (let i = this.posts.length - 1; i > 0; i--) {

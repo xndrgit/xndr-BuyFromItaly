@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <Product v-for="post in posts" :key="post.id"
+                    <Product v-for="post in promoPosts" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
                     />
@@ -33,7 +33,7 @@ import DonationComponent from "../components/MainComponents/DonationComponent.vu
 
 export default {
     mounted() {
-        this.getCategory();
+        this.getPosts();
     },
     watch: {
         '$route.params.id'(newId) {
@@ -64,20 +64,20 @@ export default {
     data() {
         return {
             posts: [],
+            promoPosts: [],
             buyComponent: false,
         };
     },
     methods: {
-        getCategory() {
+        getPosts() {
             // Make an HTTP GET request to fetch all posts with their categories
-            axios.get(`/api/categories/${this.$route.params.id}`)
+            axios.get(`/api/posts`)
                 .then(response => {
-                    if (response.data.results.data.posts) {
-                        this.posts = response.data.results.data.posts;
-                        console.log(this.posts);
+                    if (response.data.response) {
+                        // Data is available under the "results" key
+                        this.posts = response.data.results.data;
+                        this.promoPosts = this.posts.filter(post => post.promo_price !== null);
 
-                        // Assuming the response includes category and posts data
-                        // this.category = response.data.result.category;
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');

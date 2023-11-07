@@ -15,6 +15,11 @@
                     <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
                     <div v-if="iconMenu" class="mobile-menu">
                         <ul>
+                            <li class=" fa-bounce">
+                                <router-link class="promo link_category text-danger" to="/promo">
+                                    PROMO
+                                </router-link>
+                            </li>
                             <li v-for="category in categories" :key="category.id">
                                 <router-link :to="`/categories/${category.id}`" class="link_category">
                                     {{ category.name }}
@@ -22,6 +27,12 @@
                             </li>
                         </ul>
                     </div>
+                </div>
+
+                <div class="fa-bounce">
+                    <router-link class="mr-2 d-none d-lg-block link_category text-danger promo " to="/promo">
+                        PROMO
+                    </router-link>
                 </div>
 
                 <Category v-for="category in categories"
@@ -97,7 +108,7 @@ export default {
             setTimeout(() => {
                 // After 5 seconds, call getCategories and set loading to false
                 this.loading = false;
-            }, 2000);
+            }, 1000);
         },
 
         // getPosts() {
@@ -178,6 +189,7 @@ body {
 
     .router-link-active {
         font-weight: bold;
+        font-size: 0.7rem !important;
 
         &:hover {
             opacity: 1;
@@ -258,6 +270,7 @@ body {
     }
 
     .link_category {
+        font-size: 0.7rem;
         text-decoration: none;
         color: black;
         transition: all 0.3s ease; /* Smooth transition for all properties */
@@ -282,6 +295,7 @@ body {
             width: 100%; /* Expand the underline on hover */
         }
     }
+
 
 }
 </style>

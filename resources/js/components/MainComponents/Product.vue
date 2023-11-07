@@ -1,6 +1,6 @@
 <template>
 
-    <div class="product col-12 col-md-3 col-lg-2">
+    <div class="product d-flex justify-content-center flex-column align-items-center col-6 col-md-3 col-lg-2">
 
         <div
             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
@@ -100,7 +100,8 @@ export default {
     .productTop {
         position: relative;
 
-        height: 200px;
+        min-height: 250px;
+        width: 250px;
         //background-color: red;
 
         background-size: cover;
@@ -225,7 +226,9 @@ export default {
 
         .productTop {
             position: relative;
-            height: 350px;
+            min-height: 150px;
+            width: 150px;
+
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -299,12 +302,12 @@ export default {
             padding-top: 10px;
 
             .title-product {
-                font-size: 0.8rem;
+                font-size: 0.6rem;
                 font-weight: bold;
             }
 
             .category {
-                font-size: 0.7rem;
+                font-size: 0.5rem;
             }
 
             .info-product {
@@ -314,11 +317,17 @@ export default {
 
                 .price {
                     font-size: 0.6rem;
+
+                    //fix
+                    margin: 0;
                 }
 
                 .promo_price {
                     font-size: 0.6rem;
                     color: red;
+
+                    //fix
+                    margin: 0;
                 }
 
                 .divBuy {
