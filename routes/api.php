@@ -21,8 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function () {
     Route::get('posts', 'PostController@index');
     Route::get('posts/{id}', 'PostController@show');
+    // Add more routes for creating, updating, and deleting posts as needed
 
     Route::get('categories', 'CategoryController@index');
     Route::get('categories/{id}', 'CategoryController@show');
-    // Add more routes for creating, updating, and deleting posts as needed
+
+    Route::post('contacts', 'ContactController@store');
 });

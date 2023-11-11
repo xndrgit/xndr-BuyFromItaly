@@ -188,7 +188,7 @@ body {
     font-family: 'Lilita One', sans-serif;
 
     .router-link-active {
-        font-weight: bold;
+        font-weight: bolder;
         font-size: 0.7rem !important;
 
         &:hover {
@@ -278,7 +278,7 @@ body {
         /* Add subtle hover effects */
         &:hover {
             transform: translateY(-3px); /* Slightly lift the element */
-            opacity: 0.8; /* Reduce opacity on hover */
+            //opacity: 0.8; /* Reduce opacity on hover */
         }
 
         /* Add an underline effect on hover */

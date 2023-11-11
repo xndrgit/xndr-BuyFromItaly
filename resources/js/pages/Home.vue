@@ -40,6 +40,8 @@
                     </div>
                 </div>
 
+
+                <Form/>
             </div>
         </div>
     </div>
@@ -50,6 +52,9 @@ import Product from "../components/MainComponents/Product.vue";
 import PromoProduct from "./Promo.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
+import Form from "../components/MainComponents/Form.vue";
+
+
 import axios from "axios";
 
 export default {
@@ -73,6 +78,7 @@ export default {
         PromoProduct,
         BuyComponent,
         DonationComponent,
+        Form
 
     },
     props: {
@@ -92,6 +98,7 @@ export default {
 
             currentPage: 1,
             totalPages: null,
+
         };
     },
     methods: {
@@ -163,15 +170,14 @@ export default {
             } else {
                 console.log('next disabled');
             }
+        },
 
-        }
 
     },
 };
 </script>
 
 <style lang="scss" scoped>
-
 
 .home {
     padding-top: 80px;
