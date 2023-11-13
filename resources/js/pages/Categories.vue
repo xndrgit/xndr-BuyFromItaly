@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <Product v-for="post in posts" :key="post.id"
+                    <LoadingProduct v-for="n in 16" v-if="loading" :key="n"/>
+                    <Product v-for="post in posts" v-if="!loading" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
                     />
@@ -26,6 +27,7 @@
 <script>
 import axios from "axios";
 
+import LoadingProduct from "../components/MainComponents/LoadingProduct.vue";
 import Product from "../components/MainComponents/Product.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
@@ -56,6 +58,7 @@ export default {
         DonationComponent,
         BuyComponent,
         Product,
+        LoadingProduct,
         Form
     },
     props: {
@@ -65,18 +68,23 @@ export default {
 
     data() {
         return {
+            loading: null,
             posts: [],
             buyComponent: false,
+
         };
     },
     methods: {
         getCategory() {
+            this.loading = true;
             // Make an HTTP GET request to fetch all posts with their categories
             axios.get(`/api/categories/${this.$route.params.id}`)
                 .then(response => {
                     if (response.data.results.data.posts) {
                         this.posts = response.data.results.data.posts;
                         console.log(this.posts);
+
+                        this.loading = false;
 
                         // Assuming the response includes category and posts data
                         // this.category = response.data.result.category;

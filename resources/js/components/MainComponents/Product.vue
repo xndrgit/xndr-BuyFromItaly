@@ -108,8 +108,8 @@ export default {
             // Change the Y position of the page
             setTimeout(() => {
                 window.scrollTo({
-                    top: document.documentElement.scrollHeight,
-                    behavior: "auto", // You can adjust the scrolling behavior
+                    top: 5000,
+                    behavior: "smooth", // You can adjust the scrolling behavior
                 });
             }, 0);
 

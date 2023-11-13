@@ -179,7 +179,6 @@ export default {
         }
     }
 }
-
 .sent-notification {
     color: #2ecc71;
     font-size: 1.2rem;
@@ -205,4 +204,13 @@ export default {
         margin: 0 5px;
     }
 }
+
+
+@media (max-width: 767px) {
+    .form-box {
+        width: 90vw;
+    }
+}
+
+
 </style>

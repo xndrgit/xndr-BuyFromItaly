@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <Product v-for="post in promoPosts" :key="post.id"
+                    <LoadingProduct v-for="n in 16" v-if="loading" :key="n"/>
+                    <Product v-for="post in promoPosts" v-if="!loading" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
                     />
@@ -28,10 +29,17 @@
 import axios from "axios";
 
 import Product from "../components/MainComponents/Product.vue";
+import LoadingProduct from "../components/MainComponents/LoadingProduct.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
+import loading from "../components/MainComponents/Loading.vue";
 
 export default {
+    computed: {
+        loading() {
+            return loading
+        }
+    },
     mounted() {
         this.getPosts();
     },
@@ -54,7 +62,8 @@ export default {
     components: {
         DonationComponent,
         BuyComponent,
-        Product
+        Product,
+        LoadingProduct
     },
     props: {
         BuyComponentGift: Boolean,
@@ -66,10 +75,12 @@ export default {
             posts: [],
             promoPosts: [],
             buyComponent: false,
+            loading: false,
         };
     },
     methods: {
         async getPosts() {
+            this.loading = true;
             try {
                 // Initialize an array to store all promo products
                 const allPromoProducts = [];
@@ -92,6 +103,8 @@ export default {
 
                         // Move to the next page
                         page++;
+
+
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');
@@ -101,6 +114,7 @@ export default {
 
                 // Set the promo products to your component data
                 this.promoPosts = allPromoProducts;
+                this.loading = false;
             } catch (error) {
                 // Handle any network or other errors
                 console.error('An error occurred:', error);

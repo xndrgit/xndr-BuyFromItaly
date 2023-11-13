@@ -139,6 +139,7 @@ export default {
                         console.log(`📦| posts current page: ${this.currentPage}`);
 
                         this.loading = false;
+
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');
