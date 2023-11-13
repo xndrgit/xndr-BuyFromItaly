@@ -16,7 +16,7 @@
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <LoadingProduct v-for="n in 16" v-if="loading"/>
+                    <LoadingProduct v-for="n in 16" v-if="loading" :key="n"/>
 
                     <Product v-for="post in posts" v-if="!loading" v-show="!promoPostsBoolean" :key="post.id"
                              :postGift="post"
