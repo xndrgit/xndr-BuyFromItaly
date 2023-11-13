@@ -16,7 +16,9 @@
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <Product v-for="post in posts" v-show="!promoPostsBoolean" :key="post.id"
+                    <LoadingProduct v-for="n in 16" v-if="loading"/>
+
+                    <Product v-for="post in posts" v-if="!loading" v-show="!promoPostsBoolean" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
                     />
@@ -41,7 +43,7 @@
                     </div>
                 </div>
 
-
+                <!--                <DonationComponent/>-->
                 <Form/>
             </div>
         </div>
@@ -50,6 +52,7 @@
 
 <script>
 import Product from "../components/MainComponents/Product.vue";
+import LoadingProduct from "../components/MainComponents/LoadingProduct.vue";
 import PromoProduct from "./Promo.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
@@ -76,6 +79,7 @@ export default {
     name: "Home",
     components: {
         Product,
+        LoadingProduct,
         PromoProduct,
         BuyComponent,
         DonationComponent,
@@ -111,6 +115,7 @@ export default {
         },
 
         getPosts(page) {
+            this.loading = true;
             // Make an HTTP GET request to fetch all posts with their categories
             axios.get(`/api/posts?page=${page}`)
                 .then(response => {
@@ -132,6 +137,8 @@ export default {
                         this.totalPages = response.data.results.last_page;
                         console.log(`📦| posts total pages: ${this.totalPages}`);
                         console.log(`📦| posts current page: ${this.currentPage}`);
+
+                        this.loading = false;
                     } else {
                         // Handle the case where the response indicates an error
                         console.error('Error fetching data.');

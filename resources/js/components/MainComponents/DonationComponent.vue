@@ -1,7 +1,8 @@
 <template>
 
     <div class="donation-banner col-12 d-flex flex-column flex-lg-row justify-content-center">
-        <img :src="getImg('logo.png')" alt="Donation Image" class="col-md-4 col-12 banner-image img-fluid">
+        <img :src="getImg('logo.png')" alt="Donation Image"
+             class="col-md-4 col-lg-4 d-none d-lg-block banner-image img-fluid">
         <div class="banner-content col-lg-6 col-12 ">
             <h2>PALESTINE EMERGENCY</h2>
             <p>Stand with Gaza. Donate now and make a difference, every donation counts.</p>

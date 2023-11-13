@@ -1,8 +1,8 @@
 <template>
     <div>
 
-        <Loading v-if="loading"/>
-
+        <!--        <Loading v-if="loading"/>-->
+        <LoadingProduct v-if="loading"/>
         <div v-if="!loading">
             <HeaderTop @toggleBuyComponent="toggleBuyComponent"/>
 
@@ -40,11 +40,11 @@
                 />
             </div>
 
-            <div :style="circleStyle" class="button fa-bounce d-lg-none" @click="toggleBuyComponent"
-                 @mousedown="startDragging"
-                 @mousemove="moveCircle" @mouseup="stopDragging">
-                <i class="fa-2 fa-solid fa-headset"></i>
-            </div>
+            <!--            <div :style="circleStyle" class="button fa-bounce d-lg-none" @click="toggleBuyComponent"-->
+            <!--                 @mousedown="startDragging"-->
+            <!--                 @mousemove="moveCircle" @mouseup="stopDragging">-->
+            <!--                <i class="fa-2 fa-solid fa-headset"></i>-->
+            <!--            </div>-->
 
 
             <router-view
@@ -52,9 +52,6 @@
             >
                 <!--            :postsGift="posts"-->
             </router-view>
-
-
-            <DonationComponent/>
             <Socials/>
         </div>
 

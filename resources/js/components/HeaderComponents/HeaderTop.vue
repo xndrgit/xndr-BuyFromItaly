@@ -52,7 +52,11 @@
         </div>
     </div>
 </template>
-
+<img
+    :src="getImg('logo_delivery.png')"
+    alt="logo_delivery"
+    class="img-fluid"
+/>
 <script>
 
 export default {

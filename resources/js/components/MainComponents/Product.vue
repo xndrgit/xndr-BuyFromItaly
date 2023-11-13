@@ -7,16 +7,11 @@
             class="productTop d-flex justify-content-center align-items-center"
         >
 
-            <div class="overlay" @click="toggleBuyComponent">
+            <div class="overlay" @click="handleOverlayClick">
                 <div class="overlay-text">
                     B U Y
                 </div>
-                <!--                <div class="overlay-link">-->
-                <!--                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>-->
-                <!--                </div>-->
             </div>
-
-
         </div>
 
 
@@ -88,6 +83,37 @@ export default {
         },
         toggleBuyComponent() {
             this.$emit('toggleBuyComponent', true);
+        },
+
+        handleOverlayClick() {
+
+            if (this.$route.name === 'home') {
+                this.$router.push({
+                    name: 'promo',
+                });
+                this.$router.replace({
+                    name: 'home',
+                    params: {product: this.postGift.name /* your product ID or data */},
+                });
+                console.log(this.$route.params.product);
+            } else {
+                // Save data in $route or use Vuex to manage shared state
+                this.$router.replace({
+                    name: 'home',
+                    params: {product: this.postGift.name /* your product ID or data */},
+                });
+            }
+
+
+            // Change the Y position of the page
+            setTimeout(() => {
+                window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: "auto", // You can adjust the scrolling behavior
+                });
+            }, 0);
+
+
         },
     }
 };
