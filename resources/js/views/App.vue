@@ -52,7 +52,10 @@
             >
                 <!--            :postsGift="posts"-->
             </router-view>
+
+
             <DonationComponent/>
+            <Socials/>
         </div>
 
     </div>
@@ -67,6 +70,7 @@ import Loading from "../components/MainComponents/Loading.vue";
 import HeaderTop from "../components/HeaderComponents/HeaderTop.vue";
 import Category from "../components/MainComponents/Category.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
+import Socials from "../components/MainComponents/Socials.vue";
 
 export default {
     mounted() {
@@ -79,6 +83,7 @@ export default {
         DonationComponent,
         HeaderTop,
         Category,
+        Socials
     },
     data() {
         return {

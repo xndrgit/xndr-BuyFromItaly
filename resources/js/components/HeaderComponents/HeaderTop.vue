@@ -42,10 +42,11 @@
 
 
                 <section class="col-5 col-lg-5 d-none d-lg-flex justify-content-center fa-bounce">
-                    <div class="button" @click="toggleBuyComponent">
-                        <i class="fa-2 fa-solid fa-headset"></i>
-                        Contact
-                    </div>
+
+                    <!--                    <div class="button" @click="toggleBuyComponent">-->
+                    <!--                        <i class="fa-2 fa-solid fa-headset"></i>-->
+                    <!--                        Contact-->
+                    <!--                    </div>-->
                 </section>
             </div>
         </div>
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+
 export default {
     mounted() {
         this.getImg();
@@ -61,6 +63,7 @@ export default {
             this.toggleElements();
         }, 5000);
     },
+    components: {},
 
     data() {
         return {

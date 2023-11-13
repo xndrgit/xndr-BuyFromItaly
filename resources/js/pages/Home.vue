@@ -18,6 +18,7 @@
 
                     <Product v-for="post in posts" v-show="!promoPostsBoolean" :key="post.id"
                              :postGift="post"
+                             @toggleBuyComponent="toggleBuyComponent"
                     />
 
                     <BuyComponent v-show="buyComponent"

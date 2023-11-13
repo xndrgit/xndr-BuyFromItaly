@@ -121,8 +121,7 @@ export default {
                 width: 100%;
                 padding: 0.5rem;
                 font-size: 1rem;
-                border: 1px solid #ccc;
-                border-radius: 5px;
+                border: 2px solid #ccc;
                 box-sizing: border-box;
                 text-align: center; // Center-align text in input fields
                 text-transform: lowercase; // Convert text to lowercase
@@ -134,18 +133,18 @@ export default {
         }
 
         .submit-button {
-            background-color: #3498db;
+            background-color: black;
             color: #fff;
             padding: 0.5rem 1rem;
             font-size: 1rem;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             outline: none; // Remove default button focus outline
 
             &:hover {
-                background-color: #2980b9;
+                background-color: white;
+                color: black;
             }
 
             &:disabled {

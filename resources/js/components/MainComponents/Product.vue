@@ -6,16 +6,16 @@
             :style="{ backgroundImage: `url(${getImg(postGift.cover)})` }"
             class="productTop d-flex justify-content-center align-items-center"
         >
-            <a :href="postGift.shop_link">
-                <div class="overlay">
-                    <div class="overlay-text">
-                        S E A R C H
-                    </div>
-                    <!--                <div class="overlay-link">-->
-                    <!--                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>-->
-                    <!--                </div>-->
+
+            <div class="overlay" @click="toggleBuyComponent">
+                <div class="overlay-text">
+                    B U Y
                 </div>
-            </a>
+                <!--                <div class="overlay-link">-->
+                <!--                    <a :href="postGift.shop_link"><i class="fas fa-globe"></i></a>-->
+                <!--                </div>-->
+            </div>
+
 
         </div>
 
@@ -51,12 +51,12 @@
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
                     <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <!--                <div class="d-flex" @click="toggleBuyComponent">-->
-                <!--                    <a class="d-flex divBuy">-->
-                <!--                        <i class="fa-solid fa-cart-shopping"></i>-->
-                <!--                        &lt;!&ndash;                    <h3 class="buy">buy</h3>&ndash;&gt;-->
-                <!--                    </a>-->
-                <!--                </div>-->
+                <div class="d-flex">
+                    <a :href="postGift.shop_link" class="d-flex divBuy">
+                        <i class="fa-solid fa-globe"></i>
+                        <!--                    <h3 class="buy">buy</h3>-->
+                    </a>
+                </div>
             </div>
 
 

@@ -18774,3 +18774,126 @@ a.text-dark:focus {
   }
 }
 
+:root {
+  --bg: #fff;
+  --color: #333;
+}
+
+#click {
+  display: none;
+}
+
+h1 {
+  color: #fff;
+}
+
+.menu {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu .toggle {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background: var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.5s;
+  z-index: 5;
+}
+
+.menu .toggle:hover {
+  transform: rotate(360deg);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 0 0 2px #333, 0 0 0 8px #fff;
+}
+
+.menu:has(#click:checked) .toggle {
+  background: #000;
+  color: #fff;
+}
+
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.5s;
+  transform: rotate(calc(45deg * var(--x)));
+  transform-origin: 140px;
+  scale: 0;
+  transition-delay: calc(0.05s * var(--x));
+}
+
+.menu:has(#click:checked) li {
+  scale: 1;
+}
+
+.menu li a {
+  position: relative;
+  text-decoration: none;
+  transform: rotate(calc(-45deg * var(--x)));
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  color: var(--color);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.menu li a:hover {
+  font-size: 2.5rem;
+  box-shadow: 0 0 0 2px var(--color), 0 0 0 6px #fff;
+}
+
+#change-color {
+  width: 20px;
+  height: 20px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main:has(#change-color:checked) .toggle {
+  background: #000;
+  color: #fff;
+}
+
+.main:has(#change-color:checked) .inner-div {
+  background: #bddada;
+}
+
+.main:has(#change-color:checked) .menu li {
+  background: red;
+}
+
+.main:has(#change-color:checked) .menu li a {
+  background: #000;
+}
+
+.main:has(#change-color:checked) .fa-github {
+  color: #fff;
+}
+
+.main:has(#change-color:checked) h1 {
+  color: #000;
+}
+
