@@ -8,13 +8,12 @@
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
                     />
-
-                    <BuyComponent v-show="buyComponent"
-                                  @toggleBuyComponent="toggleBuyComponent"
-                    />
-                    <div v-show="buyComponent" class="overlay-black">
-                        <div class="content"></div>
-                    </div>
+                    <!--                    <BuyComponent v-show="buyComponent"-->
+                    <!--                                  @toggleBuyComponent="toggleBuyComponent"-->
+                    <!--                    />-->
+                    <!--                    <div v-show="buyComponent" class="overlay-black">-->
+                    <!--                        <div class="content"></div>-->
+                    <!--                    </div>-->
 
                 </div>
             </div>
@@ -30,6 +29,8 @@ import axios from "axios";
 import Product from "../components/MainComponents/Product.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
+
+import Form from "../components/MainComponents/Form.vue";
 
 export default {
     mounted() {
@@ -54,7 +55,8 @@ export default {
     components: {
         DonationComponent,
         BuyComponent,
-        Product
+        Product,
+        Form
     },
     props: {
         BuyComponentGift: Boolean,

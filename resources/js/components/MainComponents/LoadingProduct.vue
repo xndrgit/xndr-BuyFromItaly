@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 
 .product {
-    margin: 6rem 2rem;
+    margin: 5.5rem 2rem;
 
     .productTop {
         position: relative;

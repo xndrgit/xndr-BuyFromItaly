@@ -216,25 +216,33 @@ export default {
 
             .price {
                 font-size: 0.7rem;
+                margin: 0;
             }
 
             .promo_price {
                 font-size: 0.7rem;
                 color: red;
+                margin: 0;
             }
 
             .divBuy {
                 cursor: pointer;
+                text-decoration: none;
 
-                i {
-                    font-size: 0.7rem;
+                a {
+                    text-decoration-line: none;
 
-                    border: 1px solid black;
-                    border-radius: 50%;
-                    padding: 0.3rem;
+                    i {
+                        font-size: 0.7rem;
 
-                    color: black;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        padding: 0.3rem;
+                        color: #4aa0e6;
+                        transition: 0.3s ease-out;
+                    }
                 }
+
 
                 .buy {
                     font-size: 0.5rem;
