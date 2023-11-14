@@ -2,7 +2,7 @@
     <div>
 
         <!--        <Loading v-if="loading"/>-->
-        <LoadingProduct v-if="loading"/>
+        <!--        <LoadingProduct v-if="loading"/>-->
         <div v-if="!loading">
             <HeaderTop @toggleBuyComponent="toggleBuyComponent"/>
 

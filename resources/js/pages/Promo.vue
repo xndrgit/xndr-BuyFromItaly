@@ -32,14 +32,9 @@ import Product from "../components/MainComponents/Product.vue";
 import LoadingProduct from "../components/MainComponents/LoadingProduct.vue";
 import BuyComponent from "../components/MainComponents/BuyComponent.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
-import loading from "../components/MainComponents/Loading.vue";
 
 export default {
-    computed: {
-        loading() {
-            return loading
-        }
-    },
+    computed: {},
     mounted() {
         this.getPosts();
     },
