@@ -7,13 +7,14 @@
                     <img key="logo" :src="getImg('logo.png')" alt="logo" class="logo col-6 mb-4"/>
 
                     <div class="form-group">
-                        <label for="name">NAME</label>
-                        <input id="name" v-model="formData.name" required type="text"/>
+                        <label for="name">NOM ET PRENOM</label>
+                        <input id="name" v-model="formData.name" PLACEHOLDER="Kaïs Saïed " required type="text"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">EMAIL</label>
+                        <label for="email">ADRESSE EMAIL</label>
                         <input
+                            placeholder="kaisaied@gmail.com"
                             id="email"
                             v-model="formData.email"
                             required
@@ -22,8 +23,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">MESSAGE</label>
+                        <label for="message">ENVOYER UN MESSAGE</label>
                         <textarea
+                            placeholder="salut, blhi n7eb nechri pc (budget 400-500)"
                             id="message"
                             v-model="formData.message"
                             required
@@ -32,7 +34,7 @@
                     </div>
 
                     <button :disabled="isSent" class="submit-button" type="submit">
-                        Send Message
+                        ENVOYER
                     </button>
                 </form>
             </div>
@@ -143,9 +145,9 @@ export default {
 
             input,
             textarea {
-                width: 50%;
+                width: 60%;
                 padding: 0.4rem;
-                font-size: 0.5rem;
+                font-size: 0.7rem;
                 border: 2px solid #ccc;
                 box-sizing: border-box;
                 text-align: center;

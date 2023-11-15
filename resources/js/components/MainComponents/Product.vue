@@ -111,7 +111,7 @@ export default {
                     top: document.documentElement.scrollHeight,
                     behavior: "smooth", // You can adjust the scrolling behavior
                 });
-            }, 1000);
+            }, 500);
 
         },
     }
@@ -119,8 +119,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product{
-    margin: 2rem;
+.product {
+    margin: 3rem;
 
     .productTop {
         position: relative;
