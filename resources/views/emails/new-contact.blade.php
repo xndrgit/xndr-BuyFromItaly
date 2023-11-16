@@ -46,14 +46,11 @@
         <!-- Insert your logo here -->
     </div>
 
-    <p>Ciao {{ $lead->name }},</p>
-    <p>Abbiamo ricevuto il tuo messaggio!</p>
-    <p>La tua richiesta è stata presa in carico e uno dei nostri membri del team sarà in contatto con te a breve per
-        discutere i dettagli del tuo messaggio.</p>
-    <p>Nel frattempo, se hai ulteriori informazioni da fornire o domande urgenti, sentiti libero di rispondere a questa
-        email.</p>
-    <p>Grazie per averci scelto 💎</p>
+
+    <p>{{$lead->message}}</p>
+    <p>{{$lead->email}}</p>
+    <p>Grazie.</p>
 </div>
-<p class="thank-you">Mina Vagante</p>
+<p class="thank-you">by {{$lead->name}}</p>
 </body>
 </html>

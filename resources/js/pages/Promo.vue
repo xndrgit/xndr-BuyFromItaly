@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <LoadingProduct v-for="n in 16" v-if="loading" :key="n"/>
+                    <LoadingProduct v-for="n in 12" v-if="loading" :key="n"/>
                     <Product v-for="post in promoPosts" v-if="!loading" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"

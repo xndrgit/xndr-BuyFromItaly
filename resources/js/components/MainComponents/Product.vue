@@ -111,7 +111,7 @@ export default {
                     top: document.documentElement.scrollHeight,
                     behavior: "smooth", // You can adjust the scrolling behavior
                 });
-            }, 500);
+            }, 100);
 
         },
     }
