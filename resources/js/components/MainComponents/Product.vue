@@ -202,11 +202,11 @@ export default {
         height: 60px;
         padding-top: 10px;
         .title-product {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: bold;
         }
-        .category{
-            font-size: 0.8rem;
+        .category {
+            font-size: 0.6rem;
         }
         .info-product{
             .fa {
@@ -340,7 +340,7 @@ export default {
             }
 
             .category {
-                font-size: 0.6rem;
+                font-size: 0.5rem;
             }
 
             .info-product {
@@ -369,11 +369,11 @@ export default {
                     i {
                         font-size: 0.8rem;
 
-                        border: 1px solid black;
+                        //border: 1px solid black;
                         border-radius: 50%;
                         padding: 0.3rem;
 
-                        color: black;
+                        color: #4aa0e6;
                     }
 
                     .buy {
