@@ -14,7 +14,7 @@
                     <i v-if="!iconMenu" class="fa-beat fa-solid fa-bars icon-menu" @click="toggleIconMenu"></i>
                     <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
                     <div v-if="iconMenu" class="mobile-menu">
-                        <ul>
+                        <ul class="text-center">
                             <li class=" fa-bounce">
                                 <router-link class="promo link_category text-danger" to="/promo">
                                     PROMO

@@ -335,12 +335,12 @@ export default {
             padding-top: 10px;
 
             .title-product {
-                font-size: 0.6rem;
+                font-size: 0.7rem;
                 font-weight: bold;
             }
 
             .category {
-                font-size: 0.5rem;
+                font-size: 0.6rem;
             }
 
             .info-product {
@@ -367,7 +367,7 @@ export default {
                     cursor: pointer;
 
                     i {
-                        font-size: 0.7rem;
+                        font-size: 0.8rem;
 
                         border: 1px solid black;
                         border-radius: 50%;
@@ -377,7 +377,7 @@ export default {
                     }
 
                     .buy {
-                        font-size: 0.5rem;
+                        font-size: 0.6rem;
                     }
                 }
 
