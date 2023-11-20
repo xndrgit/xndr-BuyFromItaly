@@ -3,23 +3,23 @@
         <div class="container-fluid">
             <div class="row justify-content-lg-between justify-content-center align-items-center">
                 <section class="col-5 col-lg-5 d-none d-lg-block">
-                    <div id="free" class="d-flex align-items-center justify-content-start">
-                        <div>
-                            <img
-                                alt="logo_delivery"
-                                class="img-fluid"
-                                :src="getImg('logo_delivery.png')"
-                            />
-                        </div>
-                        <div class="d-none d-lg-inline">
-                            <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>
-                            <p>
-                                <strong>
-                                    EXPÉDITION GRATUITE DANS TOUTE LE TOUNISIE
-                                </strong>
-                            </p>
-                        </div>
-                    </div>
+                    <!--                    <div id="free" class="d-flex align-items-center justify-content-start">-->
+                    <!--                        <div>-->
+                    <!--                            <img-->
+                    <!--                                alt="logo_delivery"-->
+                    <!--                                class="img-fluid"-->
+                    <!--                                :src="getImg('logo_delivery.png')"-->
+                    <!--                            />-->
+                    <!--                        </div>-->
+                    <!--                        <div class="d-none d-lg-inline">-->
+                    <!--                            <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>-->
+                    <!--                            <p>-->
+                    <!--                                <strong>-->
+                    <!--                                    EXPÉDITION GRATUITE DANS TOUTE LE TOUNISIE-->
+                    <!--                                </strong>-->
+                    <!--                            </p>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
                 </section>
 
 

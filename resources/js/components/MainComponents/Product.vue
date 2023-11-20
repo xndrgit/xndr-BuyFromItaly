@@ -8,10 +8,13 @@
         >
 
             <div class="overlay" @click="handleOverlayClick">
+
                 <div class="overlay-text">
                     B U Y
                 </div>
+
             </div>
+
         </div>
 
 
@@ -46,7 +49,7 @@
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
                     <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <div class="d-flex">
+                <div class="d-flex fa-bounce">
                     <a :href="postGift.shop_link" class="d-flex divBuy">
                         <i class="fa-solid fa-globe"></i>
                         <!--                    <h3 class="buy">buy</h3>-->
@@ -93,14 +96,14 @@ export default {
                 });
                 this.$router.replace({
                     name: 'home',
-                    params: {product: this.postGift.name /* your product ID or data */},
+                    params: {product: 'Salut, N7eb nechri ' + this.postGift.name /* your product ID or data */},
                 });
                 console.log(this.$route.params.product);
             } else {
                 // Save data in $route or use Vuex to manage shared state
                 this.$router.replace({
                     name: 'home',
-                    params: {product: this.postGift.name /* your product ID or data */},
+                    params: {product: 'Salut, N7eb nechri ' + this.postGift.name /* your product ID or data */},
                 });
             }
 

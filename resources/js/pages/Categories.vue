@@ -17,6 +17,7 @@
                     <!--                    </div>-->
 
                 </div>
+                <DonationComponent/>
             </div>
 
 
@@ -109,6 +110,7 @@ export default {
 
 .categoryPage {
     padding-top: 80px;
+
 }
 
 .overlay-black {

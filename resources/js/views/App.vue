@@ -16,7 +16,7 @@
                     <div v-if="iconMenu" class="mobile-menu">
                         <ul class="text-center">
                             <li class=" fa-bounce">
-                                <router-link class="promo link_category text-danger" to="/promo">
+                                <router-link class="promo link_category text-danger text-center" to="/promo">
                                     PROMO
                                 </router-link>
                             </li>
@@ -30,7 +30,8 @@
                 </div>
 
                 <div class="fa-bounce">
-                    <router-link class="mr-2 d-none d-lg-block link_category text-danger promo " to="/promo">
+                    <router-link class="mr-2 d-none d-lg-block link_category text-danger promo text-center "
+                                 to="/promo">
                         PROMO
                     </router-link>
                 </div>
@@ -88,7 +89,7 @@ export default {
 
             categories: [],
             posts: [],
-            iconMenu: false,
+            iconMenu: true,
             buyComponent: false,
 
             isDragging: false,
