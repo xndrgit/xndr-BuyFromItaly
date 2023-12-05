@@ -134,6 +134,7 @@ export default {
         align-items: center;
 
         .form-group {
+            z-index: 101;
             margin-bottom: 1.5rem;
             width: 100%;
 
@@ -145,6 +146,7 @@ export default {
 
             input,
             textarea {
+                z-index: 101;
                 width: 60%;
                 padding: 0.4rem;
                 font-size: 0.7rem;
@@ -155,11 +157,13 @@ export default {
             }
 
             textarea {
+                z-index: 101;
                 resize: vertical;
             }
         }
 
         .submit-button {
+            z-index: 101;
             background-color: black;
             color: #fff;
             padding: 0.5rem 1rem;
@@ -209,9 +213,8 @@ export default {
 
 
 @media (max-width: 767px) {
-    .form-box {
-        width: 90vw;
-    }
+
+
 }
 
 
