@@ -17,7 +17,7 @@
                         <ul class="text-center">
                             <li class=" fa-bounce">
                                 <router-link class="promo link_category text-danger text-center" to="/promo">
-                                    PROMO
+                                    🎟️PROMO
                                 </router-link>
                             </li>
                             <li v-for="category in categories" :key="category.id">
@@ -32,7 +32,7 @@
                 <div class="fa-bounce">
                     <router-link class="mr-2 d-none d-lg-block link_category text-danger promo text-center "
                                  to="/promo">
-                        PROMO
+                        🎟️PROMO
                     </router-link>
                 </div>
 

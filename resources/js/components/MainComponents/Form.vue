@@ -12,13 +12,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">ADRESSE EMAIL</label>
+                        <label for="phone">NUMRU TELIFUN</label>
                         <input
-                            placeholder="kaisaied@gmail.com"
-                            id="email"
-                            v-model="formData.email"
+                            id="phone"
+                            v-model="formData.phone"
+                            placeholder="+39 388 077 1396"
                             required
-                            type="email"
+                            type="text"
                         />
                     </div>
 
@@ -73,7 +73,7 @@ export default {
 
             formData: {
                 name: '',
-                email: '',
+                phone: '',
                 message: '',
             },
             isSent: false,
@@ -91,7 +91,7 @@ export default {
             setTimeout(() => {
                 this.formData = {
                     name: '',
-                    email: '',
+                    phone: '',
                     message: '',
                 };
                 this.isSent = false;
@@ -100,7 +100,7 @@ export default {
             // Handle form submission logic here
             axios.post('api/contacts', {
                 'name': this.formData.name,
-                'email': this.formData.email,
+                'phone': this.formData.phone,
                 'message': this.formData.message,
             })
                 .then((res) => {

@@ -64,6 +64,7 @@ p {
     margin: 10px 0;
 }
 
+
 /* Donate Button */
 .donate-button {
     display: inline-block;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mina Vagante</title>
+    <title>Tunis Sans Frontier</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,7 +20,6 @@
             background-color: #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            text-align: center;
         }
 
         .logo-container {
@@ -46,11 +45,11 @@
         <!-- Insert your logo here -->
     </div>
 
-
+    <p>you received a message by {{$lead->name}}</p>
     <p>{{$lead->message}}</p>
-    <p>{{$lead->email}}</p>
-    <p>Grazie.</p>
+    <p>{{$lead->phone}}</p>
+    {{--    <p>Grazie.</p>--}}
 </div>
-<p class="thank-you">by {{$lead->name}}</p>
+{{--<p class="thank-you">by {{$lead->name}}</p>--}}
 </body>
 </html>

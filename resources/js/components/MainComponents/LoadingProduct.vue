@@ -19,13 +19,13 @@
         <!--        </div>-->
 
 
-        <div class="productBottom">
+        <!--        <div class="productBottom">-->
 
-            <div class="d-flex">
-                <h2 class="title-product mr-2">LOADING...</h2>
-            </div>
+        <!--            <div class="d-flex">-->
+        <!--                <h2 class="title-product mr-2">LOADING...</h2>-->
+        <!--            </div>-->
 
-        </div>
+        <!--        </div>-->
     </div>
 
 </template>
@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 
 .product {
-    margin: 5.5rem 2rem;
+    margin: 3rem;
 
     .productTop {
         position: relative;

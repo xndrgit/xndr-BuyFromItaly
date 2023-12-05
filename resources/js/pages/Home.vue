@@ -16,7 +16,9 @@
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <LoadingProduct v-for="n in 12" v-if="loading" :key="n"/>
+                    <!--                    <LoadingProduct v-for="n in 12" v-if="loading" :key="n"/>-->
+                    <LoadingProduct v-if="loading"/>
+
 
                     <Product v-for="post in posts" v-if="!loading" v-show="!promoPostsBoolean" :key="post.id"
                              :postGift="post"
@@ -32,7 +34,7 @@
 
                 </div>
 
-                <div class="pagination-container col-12 mb-5">
+                <div v-if="!loading" class="pagination-container col-12 my-5">
                     <div :class="{disabled: currentPage <= 1}" class="pagination-button prev" @click="prevPage">
                         <i class="fa-solid fa-circle-chevron-left"></i>
                     </div>

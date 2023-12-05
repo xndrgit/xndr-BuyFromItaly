@@ -39,10 +39,18 @@ Route::middleware('auth')
 
 //        CUSTOM ROUTES
 //        Route::patch('posts/{id}/deleteFromCategory', 'PostController@deleteFromCategory')->name('posts.deleteFromCategory');
-
-
-
     });
+
+Route::namespace('Api')->group(function () {
+//    Route::get('posts', 'PostController@index');
+//    Route::get('posts/{id}', 'PostController@show');
+    // Add more routes for creating, updating, and deleting posts as needed
+
+//    Route::get('categories', 'CategoryController@index');
+//    Route::get('categories/{id}', 'CategoryController@show');
+
+    Route::post('contacts', 'ContactController@store');
+});
 
 
 Route::get("{any?}", function () {

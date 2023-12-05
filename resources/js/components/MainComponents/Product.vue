@@ -28,7 +28,7 @@
         <div class="productBottom">
 
             <div class="d-flex">
-                <h2 class="title-product mr-2">{{postGift.name}}</h2>
+                <h2 class="title-product mr-2">{{ postGift.name.toUpperCase() }}</h2>
                 <div class="d-flex mr-2">
                     <h3 v-if="postGift.category" :style="{ color: postGift.category.color }"
                         class="category badge rounded-pill">{{ postGift.category.name }}</h3>
@@ -49,7 +49,7 @@
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
                     <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <div class="d-flex fa-bounce">
+                <div v-if="postGift.shop_link" class="d-flex fa-bounce">
                     <a :href="postGift.shop_link" class="d-flex divBuy">
                         <i class="fa-solid fa-globe"></i>
                         <!--                    <h3 class="buy">buy</h3>-->
@@ -205,7 +205,7 @@ export default {
         height: 60px;
         padding-top: 10px;
         .title-product {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             font-weight: bold;
         }
         .category {
