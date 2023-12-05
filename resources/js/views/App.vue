@@ -53,6 +53,7 @@
             >
                 <!--            :postsGift="posts"-->
             </router-view>
+
             <Socials/>
         </div>
 

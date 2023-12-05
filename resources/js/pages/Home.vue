@@ -46,6 +46,13 @@
                 </div>
 
                 <!--                <DonationComponent/>-->
+
+
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="send-product col-10 col-sm-6 text-center">Can't find what you're looking for? Let us know!
+                        Drop us a message through the form below, and we'll assist you personally.</p>
+                </div>
+
                 <Form/>
             </div>
         </div>
@@ -105,6 +112,7 @@ export default {
 
             currentPage: 1,
             totalPages: null,
+
 
         };
     },
@@ -268,7 +276,21 @@ export default {
         color: #333;
         margin: 0 20px;
     }
+
+
 }
+
+.send-product {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .send-product {
+        font-size: 1rem;
+    }
+}
+
 
 
 </style>

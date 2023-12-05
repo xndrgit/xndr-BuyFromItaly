@@ -7,13 +7,16 @@
             class="productTop d-flex justify-content-center align-items-center"
         >
 
-            <div class="overlay" @click="handleOverlayClick">
+            <a :href="postGift.shop_link">
+                <!--                @click="handleOverlayClick"-->
 
-                <div class="overlay-text">
-                    B U Y
+                <div class="overlay">
+                    <div class="overlay-text">
+                        S E A R C H
+                    </div>
                 </div>
 
-            </div>
+            </a>
 
         </div>
 
@@ -25,16 +28,15 @@
         <!--        </div>-->
 
 
-        <div class="productBottom">
+        <div class="productBottom ">
 
-            <div class="d-flex">
+            <div class="d-flex flex-column">
                 <h2 class="title-product mr-2">{{ postGift.name.toUpperCase() }}</h2>
                 <div class="d-flex mr-2">
                     <h3 v-if="postGift.category" :style="{ color: postGift.category.color }"
                         class="category badge rounded-pill">{{ postGift.category.name }}</h3>
                 </div>
             </div>
-
 
             <div class="info-product d-flex align-items-center ">
                 <div v-if="!postGift.promo_price" class="d-flex mr-2">
@@ -49,14 +51,13 @@
                     <i class="fa fa-shake fa-solid fa-tag" style="color: #ff0000;"></i>
                     <h3 class="promo_price">{{ postGift.promo_price }} TND</h3>
                 </div>
-                <div v-if="postGift.shop_link" class="d-flex fa-bounce">
-                    <a :href="postGift.shop_link" class="d-flex divBuy">
-                        <i class="fa-solid fa-globe"></i>
-                        <!--                    <h3 class="buy">buy</h3>-->
-                    </a>
-                </div>
+                <!--                <div v-if="postGift.shop_link" class="d-flex fa-bounce">-->
+                <!--                    <a :href="postGift.shop_link" class="d-flex divBuy">-->
+                <!--                        <i class="fa-solid fa-globe"></i>-->
+                <!--                        &lt;!&ndash;                    <h3 class="buy">buy</h3>&ndash;&gt;-->
+                <!--                    </a>-->
+                <!--                </div>-->
             </div>
-
 
         </div>
     </div>
@@ -106,7 +107,6 @@ export default {
                     params: {product: 'Salut, N7eb nechri ' + this.postGift.name /* your product ID or data */},
                 });
             }
-
 
             // Change the Y position of the page
             setTimeout(() => {
@@ -338,7 +338,7 @@ export default {
             padding-top: 10px;
 
             .title-product {
-                font-size: 0.7rem;
+                font-size: 0.5rem;
                 font-weight: bold;
             }
 
