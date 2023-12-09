@@ -83,7 +83,7 @@ h1 {
 }
 
 .menu:has(#click:checked) .toggle {
-    background: #{$highlight-color};
+    background: white;
     color: #fff;
 }
 

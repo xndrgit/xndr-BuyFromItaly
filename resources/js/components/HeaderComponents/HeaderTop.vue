@@ -24,21 +24,25 @@
 
 
                 <router-link class="divLogo col-2 d-flex flex-column justify-content-center align-items-center" to="/">
-                    <transition mode="out-in" name="fade">
-                        <img key="logo" :src="getImg('logo.png')" alt="logo" class="logo"/>
+                    <transition v-if="showLogo" mode="out-in" name="fade">
+                        <img key="logo" :src="getImg('logo.png')" alt="Tunis Sans Frontier - Mall Online Tunisia"
+                             class="logo"/>
                     </transition>
-                    <!--                    <transition v-if="!showLogo" name="fade" mode="out-in">-->
-                    <!--                        <div class="div-tsf">-->
-                    <!--                            <img alt="logo" class="img-fluid logo-tsf" :src="getImg('tsf.png')" key="tsf" />-->
-                    <!--                        </div>-->
-                    <!--                    </transition>-->
+                    <transition v-if="!showLogo" mode="out-in" name="fade">
+                        <h1 v-if="!showLogo" class="title">
+                            Tunis<br>
+                            Sans<br>
+                            Frontier
+                        </h1>
+                    </transition>
+                    <!--                                        <transition v-if="!showLogo" name="fade" mode="out-in">-->
+                    <!--                                            <div class="div-tsf">-->
+                    <!--                                                <img alt="logo" class="img-fluid logo-tsf" :src="getImg('tsf.png')" key="tsf" />-->
+                    <!--                                            </div>-->
+                    <!--                                        </transition>-->
                 </router-link>
 
-                <!--                                <h1 v-if="!showLogo" class="title">-->
-                <!--                                    Tunis,<br>-->
-                <!--                                    Sans<br>-->
-                <!--                                    Frontières.-->
-                <!--                                </h1>-->
+
 
 
                 <section class="col-5 col-lg-5 d-none d-lg-flex justify-content-center fa-bounce">
@@ -52,11 +56,7 @@
         </div>
     </div>
 </template>
-<img
-    :src="getImg('logo_delivery.png')"
-    alt="logo_delivery"
-    class="img-fluid"
-/>
+
 <script>
 
 export default {
@@ -111,6 +111,8 @@ export default {
 <style lang="scss" scoped>
 
 .HeaderTop {
+    font-family: 'Beau Rivage', Impact, cursive;
+
     z-index: 10;
     position: fixed;
     top: 0;
@@ -192,7 +194,7 @@ export default {
         }
 
         .title {
-            font-size: 1.5rem;
+            font-size: 2rem;
             cursor: pointer;
             color: black;
         }

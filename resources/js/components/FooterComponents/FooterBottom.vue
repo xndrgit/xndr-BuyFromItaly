@@ -1,22 +1,22 @@
 <template>
     <div class="FooterBottom">
-      <div class="container-lg d-flex align-items-center justify-content-around justify-content-xl-between p-0">
+      <div class="container-lg d-flex align-items-center justify-content-center p-0">
 
-        <div class="d-flex align-items-center">
-          <p class="policy">
-            ©2022 PAPYRA SRL - P.IVA 01502350430 - PRIVACY & COOKIES
-            POLICY - MADE WITH <span class="text-danger"> ♥ </span> BY
-            <a href="https://github.com/xndrgit">xndr</a>
-          </p>
-        </div>
+          <div class="d-flex align-items-center">
+              <p class="policy">
+                  ©2023 TUNIS SANS FRONTIER SRL - PRIVACY & COOKIES
+                  POLICY - MADE WITH <span class="text-danger"> ♥ </span> BY
+                  <a href="https://wa.me/+393880771396">xndr</a>
+              </p>
+          </div>
 
-        <div>
-                <img
-                  alt="payment_cards"
-                  class="img-fluid"
-                  src="../../../../public/Links/carte-di-pagamento.png"
-                />
-            </div>
+          <div>
+              <!--                <img-->
+              <!--                  alt="payment_cards"-->
+              <!--                  class="img-fluid"-->
+              <!--                  src="../../../../public/Links/carte-di-pagamento.png"-->
+              <!--                />-->
+          </div>
 
         </div>
     </div>
@@ -33,13 +33,10 @@ export default {};
   background-color: black;
   color: white;
 
-  img {
-    height: 20px;
-    margin: 10px;
-  }
 
   .policy {
-    display: contents;
+      display: contents;
+      font-size: 0.6rem;
   }
 
   p {
@@ -67,8 +64,8 @@ export default {};
     display: none;
   }
   .policy {
-    font-size: 0.3rem;
-    font-weight: bold;
+      font-size: 0.4rem !important;
+      font-weight: bold;
   }
 }
 </style>

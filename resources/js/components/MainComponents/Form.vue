@@ -1,5 +1,6 @@
 <template>
     <div id="form" class="col-12 d-flex justify-content-center">
+
         <div v-if="!isSent" class="form-container">
             <div class="form-box">
                 <form @submit.prevent="submitForm">
@@ -7,23 +8,23 @@
                     <img key="logo" :src="getImg('logo.png')" alt="logo" class="logo col-6 mb-4"/>
 
                     <div class="form-group">
-                        <label for="name">NOM ET PRENOM</label>
+                        <label for="name">7OT ESMEK</label>
                         <input id="name" v-model="formData.name" PLACEHOLDER="Kaïs Saïed " required type="text"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">NUMRU TELIFUN</label>
+                        <label for="phone">7OT NUMROUK</label>
                         <input
                             id="phone"
                             v-model="formData.phone"
-                            placeholder="+39 388 077 1396"
+                            placeholder="+216 21857185"
                             required
                             type="text"
                         />
                     </div>
 
                     <div class="form-group">
-                        <label for="message">ENVOYER UN MESSAGE</label>
+                        <label for="message">AB3FLI CKNOUW T7EB</label>
                         <textarea
                             placeholder="salut, blhi n7eb nechri pc (budget 400-500)"
                             id="message"
@@ -34,7 +35,7 @@
                     </div>
 
                     <button :disabled="isSent" class="submit-button" type="submit">
-                        ENVOYER
+                        AB3F
                     </button>
                 </form>
             </div>
@@ -42,7 +43,7 @@
 
         <div v-if="isSent" class="sent-notification">
             <i class="fas fa-check-circle"></i>
-            <p>EMAIL SENT!</p>
+            <p>MREGEL MESSAGEK WSOL</p>
         </div>
     </div>
 </template>
@@ -117,6 +118,8 @@ export default {
 
 <style lang="scss" scoped>
 .form-container {
+    z-index: 101;
+
     margin: 2rem auto;
     text-align: center;
 

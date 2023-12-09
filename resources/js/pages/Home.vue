@@ -199,7 +199,7 @@ export default {
 <style lang="scss" scoped>
 
 .home {
-    padding-top: 80px;
+    padding-top: 10px;
 
     .overlay-black {
         position: fixed;
@@ -278,10 +278,6 @@ export default {
     }
 
 
-}
-
-.send-product {
-    font-size: 1.5rem;
 }
 
 

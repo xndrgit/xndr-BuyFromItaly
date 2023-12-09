@@ -54,6 +54,9 @@
                 <!--            :postsGift="posts"-->
             </router-view>
 
+            <FooterTop/>
+            <FooterBottom/>
+
             <Socials/>
         </div>
 
@@ -70,6 +73,8 @@ import HeaderTop from "../components/HeaderComponents/HeaderTop.vue";
 import Category from "../components/MainComponents/Category.vue";
 import DonationComponent from "../components/MainComponents/DonationComponent.vue";
 import Socials from "../components/MainComponents/Socials.vue";
+import FooterTop from "../components/FooterComponents/FooterTop.vue";
+import FooterBottom from "../components/FooterComponents/FooterBottom.vue";
 
 export default {
     mounted() {
@@ -78,6 +83,8 @@ export default {
 
     name: "App",
     components: {
+        FooterBottom,
+        FooterTop,
         Loading,
         DonationComponent,
         HeaderTop,
@@ -190,6 +197,9 @@ body {
     //background-color: red;
 
     font-family: 'Lilita One', sans-serif;
+    //font-family: 'Silkscreen', sans-serif;
+    //font-family: 'Caveat', cursive;
+
 
     .router-link-active {
         font-weight: bolder;
@@ -215,6 +225,10 @@ body {
 
             }
         }
+    }
+
+    .send-product {
+        font-size: 1.5rem;
     }
 
     .mobile-categories {
