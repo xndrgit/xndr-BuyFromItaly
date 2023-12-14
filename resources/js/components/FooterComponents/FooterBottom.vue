@@ -33,6 +33,10 @@ export default {};
     background: #f1efe9;
     color: black;
 
+    a {
+        font-size: 1rem;
+    }
+
 
     .policy {
         display: contents;
@@ -42,9 +46,9 @@ export default {};
     p {
         a {
             text-decoration: none;
-      margin-left: 10px;
+            margin-left: 10px;
+        }
     }
-  }
 
 
 }
