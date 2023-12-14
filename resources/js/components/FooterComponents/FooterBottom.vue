@@ -1,6 +1,6 @@
 <template>
     <div class="FooterBottom">
-      <div class="container-lg d-flex align-items-center justify-content-center p-0">
+      <div class="d-flex align-items-center justify-content-center p-0">
 
           <div class="d-flex align-items-center">
               <p class="policy">
@@ -29,19 +29,19 @@ export default {};
 <style lang="scss" scoped>
 
 .FooterBottom {
-  width: 100%;
-  background-color: black;
-  color: white;
+    width: 100%;
+    background: #f1efe9;
+    color: black;
 
 
-  .policy {
-      display: contents;
-      font-size: 0.7rem;
-  }
+    .policy {
+        display: contents;
+        font-size: 0.7rem;
+    }
 
-  p {
-    a {
-      text-decoration: none;
+    p {
+        a {
+            text-decoration: none;
       margin-left: 10px;
     }
   }
