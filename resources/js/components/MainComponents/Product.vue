@@ -7,16 +7,17 @@
             class="productTop d-flex justify-content-center align-items-center"
         >
 
-            <a :href="postGift.shop_link">
-                <!--                @click="handleOverlayClick"-->
+            <!--            <a :href="postGift.shop_link">-->
+            <!--                &lt;!&ndash;                @click="handleOverlayClick"&ndash;&gt;-->
 
-                <div class="overlay">
-                    <div class="overlay-text">
-                        S E A R C H
-                    </div>
-                </div>
+            <!--            </a>-->
 
-            </a>
+            <!--                <div class="overlay">-->
+            <!--                    <div class="overlay-text">-->
+            <!--                        S E A R C H-->
+            <!--                    </div>-->
+            <!--                </div>-->
+
 
         </div>
 
@@ -123,7 +124,7 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-    margin: 3rem;
+    margin: 5rem 3rem 0 3rem;
 
     .productTop {
         position: relative;
@@ -258,7 +259,7 @@ export default {
 
 @media (max-width: 768px) {
     .product {
-        margin: 2rem 0;
+        margin: 5rem 0 0 0;
 
         .productTop {
             position: relative;

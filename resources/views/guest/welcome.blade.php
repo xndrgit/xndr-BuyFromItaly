@@ -1,100 +1,86 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tunis Sans Frontièr → Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dhurjati&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            font-family: 'Dhurjati', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #f7f7f7; /* Background color for the page */
+        }
 
-        <title>Laravel</title>
+        /* Flexbox layout for alignment */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 20px;
+        }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        .logo {
+            width: 80%; /* Adjust the logo width */
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        .text {
+            text-align: center;
+            font-size: 14px;
+            color: #333; /* Adjust text color */
+            /* Additional styling for your text */
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+        /* Styling for the home button */
+        .home-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Adjust the home button width */
+            height: 60px; /* Adjust the home button height */
+            border-radius: 50%;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #fff; /* Background color for the button */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: transform 0.3s ease; /* Smooth transition on hover */
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        /* Styles for the home button icon */
+        .home-btn img {
+            width: 60px; /* Adjust the icon size */
+            height: auto;
+        }
 
-            .position-ref {
-                position: relative;
-            }
+        /* Hover effect for the home button */
+        .home-btn:hover {
+            transform: scale(1.1); /* Scale up the button on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="/img/logo.png" alt="Tunis Sans Frontièr - TSF - Mall Online" class="logo">
+    <p class="text">
+        Tunis Sans Frontièr (TSF) vous offre une large gamme de produits importés du monde entier, comprenant des
+        articles d'Europe, de Chine, d'Amérique et bien plus encore.
+    </p>
+    <p class="text">Découvrez notre sélection de produits importés par Tunis Sans Frontièr.</p>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+    <a href="/home" class="home-btn">
+        <img src="/img/home.png" alt="Tunis Sans Frontièr - Home">
+    </a>
+</div>
+</body>
 </html>

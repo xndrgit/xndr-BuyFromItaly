@@ -15,7 +15,7 @@
                     <i v-if="iconMenu" class=" fa-solid fa-circle-chevron-down icon-menu" @click="toggleIconMenu"></i>
                     <div v-if="iconMenu" class="mobile-menu">
                         <ul class="text-center">
-                            <li class=" fa-bounce">
+                            <li class="">
                                 <router-link class="promo link_category text-danger text-center" to="/promo">
                                     🎟️PROMO
                                 </router-link>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="fa-bounce">
+                <div class="">
                     <router-link class="mr-2 d-none d-lg-block link_category text-danger promo text-center "
                                  to="/promo">
                         🎟️PROMO
@@ -229,6 +229,7 @@ body {
 
     .send-product {
         font-size: 1.5rem;
+        margin-top: 5rem;
     }
 
     .mobile-categories {

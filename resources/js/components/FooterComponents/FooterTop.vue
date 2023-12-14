@@ -16,8 +16,6 @@
                     <div class="footer-section col-6 col-sm-3">
                         <h3>Menu utilisateur</h3>
                         <ul>
-                            <li><span href="#">Compte</span></li>
-                            <li><span href="#">Panier</span></li>
                             <li><span href="#">Abonnement TSF</span></li>
                             <li><span href="#">Conditions de vente</span></li>
                             <li><span href="#">Politique de confidentialité et cookies</span></li>
@@ -62,7 +60,7 @@ export default {};
 
 .FooterTop {
     padding: 3rem 0;
-    background-color: white;
+    background-color: #f1efe9;
 
     input {
         font-size: .6rem;

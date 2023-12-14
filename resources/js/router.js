@@ -12,8 +12,13 @@ import About from "./pages/About.vue";
 const router = new VueRouter({
     mode: 'history',
     routes: [
+        // {
+        //     path: '/',
+        //     name: 'welcome',
+        //     component: Welcome
+        // },
         {
-            path: '/',
+            path: '/home',
             name: 'home',
             component: Home
         },

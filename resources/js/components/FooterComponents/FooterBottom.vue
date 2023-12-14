@@ -36,7 +36,7 @@ export default {};
 
   .policy {
       display: contents;
-      font-size: 0.6rem;
+      font-size: 0.7rem;
   }
 
   p {
@@ -64,7 +64,7 @@ export default {};
     display: none;
   }
   .policy {
-      font-size: 0.4rem !important;
+      font-size: 0.55rem !important;
       font-weight: bold;
   }
 }

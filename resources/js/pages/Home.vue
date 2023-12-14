@@ -13,8 +13,29 @@
                 <!--                    />-->
                 <!--                </div>-->
 
+                <div class="col-12 home-jumbo">
+                    <div id="free" class="d-flex align-items-center justify-content-start">
+                        <div>
+                            <img
+                                :src="getImg('logo_delivery.png')"
+                                alt="logo_delivery"
+                                class="img-fluid"
+                            />
+                        </div>
+                        <div class=" d-inline ">
+                            <!--                            <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>-->
+                            <p>
+                                <strong>
+                                    <!--                                    BIENVENUE EN TUNIS SANS FRONTIER STORE-->
+                                    LIVRAISON GRATUITE EN TUNISIE
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-12 d-flex flex-wrap justify-content-center">
+
 
                     <!--                    <LoadingProduct v-for="n in 12" v-if="loading" :key="n"/>-->
                     <LoadingProduct v-if="loading"/>
@@ -49,9 +70,12 @@
 
 
                 <div class="col-12 d-flex justify-content-center">
-                    <p class="send-product col-10 col-sm-6 text-center">Can't find what you're looking for? Let us know!
-                        Drop us a message through the form below, and we'll assist you personally.</p>
+                    <p class="send-product col-10 col-sm-6 text-center">Vous ne trouvez pas ce que vous cherchez ?
+                        Faites-le nous savoir ! Envoyez-nous un message via le formulaire ci-dessous, et nous vous
+                        aiderons personnellement.
+                    </p>
                 </div>
+
 
                 <Form/>
             </div>
@@ -198,6 +222,7 @@ export default {
 
 <style lang="scss" scoped>
 
+
 .home {
     padding-top: 10px;
 
@@ -267,7 +292,10 @@ export default {
     }
 
     .disabled {
+        display: none;
         cursor: not-allowed;
+        color: #f1efe9;
+        border: 0;
     }
 
     .current-page {
@@ -278,6 +306,22 @@ export default {
     }
 
 
+}
+
+
+.home-jumbo {
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 30px;
+        margin: 0.5rem;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.8rem;
+    }
 }
 
 

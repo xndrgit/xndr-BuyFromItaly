@@ -8,12 +8,12 @@
                     <img key="logo" :src="getImg('logo.png')" alt="logo" class="logo col-6 mb-4"/>
 
                     <div class="form-group">
-                        <label for="name">7OT ESMEK</label>
+                        <label for="name">NOM ET PRENOM</label>
                         <input id="name" v-model="formData.name" PLACEHOLDER="Kaïs Saïed " required type="text"/>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">7OT NUMROUK</label>
+                        <label for="phone">NUMÉRO DE TÉLÉPHONE</label>
                         <input
                             id="phone"
                             v-model="formData.phone"
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">AB3FLI CKNOUW T7EB</label>
+                        <label for="message">ENVOYEZ VOTRE MESSAGE</label>
                         <textarea
                             placeholder="salut, blhi n7eb nechri pc (budget 400-500)"
                             id="message"
@@ -35,7 +35,7 @@
                     </div>
 
                     <button :disabled="isSent" class="submit-button" type="submit">
-                        AB3F
+                        ENVOYEZ
                     </button>
                 </form>
             </div>

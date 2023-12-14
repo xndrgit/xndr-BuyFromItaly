@@ -3,27 +3,28 @@
         <div class="container-fluid">
             <div class="row justify-content-lg-between justify-content-center align-items-center">
                 <section class="col-5 col-lg-5 d-none d-lg-block">
-                    <!--                    <div id="free" class="d-flex align-items-center justify-content-start">-->
-                    <!--                        <div>-->
-                    <!--                            <img-->
-                    <!--                                alt="logo_delivery"-->
-                    <!--                                class="img-fluid"-->
-                    <!--                                :src="getImg('logo_delivery.png')"-->
-                    <!--                            />-->
-                    <!--                        </div>-->
-                    <!--                        <div class="d-none d-lg-inline">-->
-                    <!--                            <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>-->
-                    <!--                            <p>-->
-                    <!--                                <strong>-->
-                    <!--                                    EXPÉDITION GRATUITE DANS TOUTE LE TOUNISIE-->
-                    <!--                                </strong>-->
-                    <!--                            </p>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+                    <!--                                        <div id="free" class="d-flex align-items-center justify-content-start">-->
+                    <!--                                            <div>-->
+                    <!--                                                <img-->
+                    <!--                                                    alt="logo_delivery"-->
+                    <!--                                                    class="img-fluid"-->
+                    <!--                                                    :src="getImg('logo_delivery.png')"-->
+                    <!--                                                />-->
+                    <!--                                            </div>-->
+                    <!--                                            <div class="d-none d-lg-inline">-->
+                    <!--                                                <p>ÊTES-VOUS UN NOUVEAU CLIENT?</p>-->
+                    <!--                                                <p>-->
+                    <!--                                                    <strong>-->
+                    <!--                                                        BIENVENUE EN TUNIS SANS FRONTIER STORE-->
+                    <!--                                                    </strong>-->
+                    <!--                                                </p>-->
+                    <!--                                            </div>-->
+                    <!--                                        </div>-->
                 </section>
 
 
-                <router-link class="divLogo col-2 d-flex flex-column justify-content-center align-items-center" to="/">
+                <router-link class="divLogo col-2 d-flex flex-column justify-content-center align-items-center"
+                             to="/home">
                     <transition v-if="showLogo" mode="out-in" name="fade">
                         <img key="logo" :src="getImg('logo.png')" alt="Tunis Sans Frontier - Mall Online Tunisia"
                              class="logo"/>
@@ -111,7 +112,6 @@ export default {
 <style lang="scss" scoped>
 
 .HeaderTop {
-    font-family: 'Beau Rivage', Impact, cursive;
 
     z-index: 10;
     position: fixed;
@@ -194,9 +194,12 @@ export default {
         }
 
         .title {
+            font-family: 'Beau Rivage', Impact, cursive;
+
             font-size: 2rem;
             cursor: pointer;
             color: black;
+
         }
     }
 

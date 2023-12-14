@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-flex flex-wrap justify-content-center">
 
-                    <router-link class="hover" to="/">
+                    <router-link class="hover" to="/home">
                         <svg class="shadow" height="50" viewBox="0 0 100 100"
                              width="50" xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -47,9 +47,11 @@
                 </div>
 
                 <!--                <DonationComponent/>-->
+
                 <div class="col-12 d-flex justify-content-center">
-                    <p class="send-product col-10 col-sm-6 text-center">Can't find what you're looking for? Let us know!
-                        Drop us a message through the form below, and we'll assist you personally.</p>
+                    <p class="send-product col-10 col-sm-6 text-center">Vous ne trouvez pas ce que vous cherchez ?
+                        Faites-le nous savoir ! Envoyez-nous un message via le formulaire ci-dessous, et nous vous
+                        aiderons personnellement.</p>
                 </div>
                 <Form/>
             </div>
