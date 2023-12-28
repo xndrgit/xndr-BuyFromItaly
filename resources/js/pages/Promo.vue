@@ -31,7 +31,7 @@
                         <div class="clip"></div>
                     </router-link>
 
-                    <LoadingProduct v-for="n in 12" v-if="loading" :key="n"/>
+                    <LoadingProduct v-if="loading"/>
                     <Product v-for="post in promoPosts" v-if="!loading" :key="post.id"
                              :postGift="post"
                              @toggleBuyComponent="toggleBuyComponent"
